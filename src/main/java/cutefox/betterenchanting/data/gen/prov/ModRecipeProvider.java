@@ -332,19 +332,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.QUARTZ), conditionsFromItem(Items.QUARTZ))
                 .offerTo(exporter, Utils.id(getRecipeName(BEItems.INFUSED_LAPIS)));
 
-
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, BEItems.ESSENCE_OF_SNEAK_1, 1)
-                .input(BEItems.ESSENCE_OF_SNEAK_2)
-                .criterion(hasItem(BEItems.ESSENCE_OF_SNEAK_2), conditionsFromItem(BEItems.ESSENCE_OF_SNEAK_2))
-                .criterion(hasItem(BEItems.ESSENCE_OF_SNEAK_1), conditionsFromItem(BEItems.ESSENCE_OF_SNEAK_1))
-                .offerTo(exporter, Utils.id(getRecipeName(BEItems.ESSENCE_OF_SNEAK_1)));
-
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, BEItems.ESSENCE_OF_SNEAK_2, 1)
-                .input(BEItems.ESSENCE_OF_SNEAK_3)
-                .criterion(hasItem(BEItems.ESSENCE_OF_SNEAK_3), conditionsFromItem(BEItems.ESSENCE_OF_SNEAK_3))
-                .criterion(hasItem(BEItems.ESSENCE_OF_SNEAK_2), conditionsFromItem(BEItems.ESSENCE_OF_SNEAK_2))
-                .offerTo(exporter, Utils.id(getRecipeName(BEItems.ESSENCE_OF_SNEAK_2)));
-
         //Essences
         Item recipeItem = BEItems.ESSENCE_OF_PROTECTION;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)

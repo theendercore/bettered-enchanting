@@ -38,9 +38,7 @@ public class BEItems {
     public static final Item ESSENCE_OF_BLAST_PROTECTION = registerItem("essence_of_blast_protection", essence());
     public static final Item ESSENCE_OF_PROJECTILE_PROTECTION = registerItem("essence_of_projectile_protection", essence());
     public static final Item SOUL_ESSENCE = registerItem("soul_essence", essence());
-    public static final Item ESSENCE_OF_SNEAK_1 = registerItem("essence_of_sneak_1", essence());
-    public static final Item ESSENCE_OF_SNEAK_2 = registerItem("essence_of_sneak_2", new Item(new Item.Settings().maxCount(1).fireproof().component(DataComponentTypes.ENCHANTMENT_GLINT_OVERRIDE, true).recipeRemainder(BEItems.ESSENCE_OF_SNEAK_1)));
-    public static final Item ESSENCE_OF_SNEAK_3 = registerItem("essence_of_sneak_3", new Item(new Item.Settings().maxCount(1).fireproof().component(DataComponentTypes.ENCHANTMENT_GLINT_OVERRIDE, true).recipeRemainder(BEItems.ESSENCE_OF_SNEAK_2)));
+    public static final Item ESSENCE_OF_SNEAK = registerItem("essence_of_sneak", essence());
     public static final Item ESSENCE_OF_FEATHER = registerItem("essence_of_feather", essence());
     public static final Item ESSENCE_OF_RESPIRATION = registerItem("essence_of_respiration", essence());
     public static final Item ESSENCE_OF_SEA = registerItem("essence_of_sea", essence());

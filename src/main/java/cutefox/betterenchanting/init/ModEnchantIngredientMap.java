@@ -54,7 +54,7 @@ public class ModEnchantIngredientMap {
         defaultMap.put(Enchantments.DEPTH_STRIDER.getValue().toString(), listOfIdentifiers(List.of(Items.COD, Items.SPONGE, BEItems.ESSENCE_OF_SEA)));
         defaultMap.put(Enchantments.FROST_WALKER.getValue().toString(), listOfIdentifiers(List.of(Items.BLUE_ICE, BEItems.ESSENCE_OF_ICE))); //Treasure
         defaultMap.put(Enchantments.SOUL_SPEED.getValue().toString(), listOfIdentifiers(List.of(BEItems.SOUL_ESSENCE, BEItems.SOUL_ESSENCE, BEItems.SOUL_ESSENCE))); //Treasure
-        defaultMap.put(Enchantments.SWIFT_SNEAK.getValue().toString(), listOfIdentifiers(List.of(BEItems.ESSENCE_OF_SNEAK_1, BEItems.ESSENCE_OF_SNEAK_2, BEItems.ESSENCE_OF_SNEAK_3))); //Treasure
+        defaultMap.put(Enchantments.SWIFT_SNEAK.getValue().toString(), listOfIdentifiers(List.of(BEItems.ESSENCE_OF_SNEAK, BEItems.ESSENCE_OF_SNEAK, BEItems.ESSENCE_OF_SNEAK))); //Treasure
 
         //Sword enchantment
         defaultMap.put(Enchantments.SHARPNESS.getValue().toString(), listOfIdentifiers(List.of(Items.FLINT, Items.IRON_SWORD, Items.GRINDSTONE, Items.DIAMOND, BEItems.ESSENCE_OF_SHARPNESS)));
