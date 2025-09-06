@@ -1,4 +1,4 @@
-package cutefox.betterenchanting.datagen;
+package cutefox.betterenchanting.data.gen;
 
 import cutefox.betterenchanting.BetterEnchanting;
 import cutefox.betterenchanting.registry.ModItems;

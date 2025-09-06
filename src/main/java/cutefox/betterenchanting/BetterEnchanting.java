@@ -4,7 +4,10 @@ import cutefox.betterenchanting.Util.EnchantingIngredientMapPayload;
 import cutefox.betterenchanting.Util.Utils;
 import cutefox.betterenchanting.conditions.ModConfigConditions;
 import cutefox.betterenchanting.config.GlobalConfig;
-import cutefox.betterenchanting.datagen.ModEnchantIngredientMap;
+import cutefox.betterenchanting.data.ModEnchantmentTags;
+import cutefox.betterenchanting.data.ModItemTags;
+import cutefox.betterenchanting.data.ModLootTables;
+import cutefox.betterenchanting.data.gen.ModEnchantIngredientMap;
 import cutefox.betterenchanting.registry.*;
 import eu.midnightdust.lib.config.MidnightConfig;
 import net.fabricmc.api.ModInitializer;
@@ -49,11 +52,8 @@ public class BetterEnchanting implements ModInitializer {
 		MidnightConfig.init("better-enchanting/betterEnchanting", GlobalConfig.class);
 		ModItems.registerModItems();
 		ModScreenHandlerType.registerModScreenHandlers();
-		ModEnchantmentTags.registerModTags();
 		ModEnchantIngredientMap.createMap();
 		ModTradeOffers.removeEnchantedBooks();
-		ModItemTags.registerModTags();
-		ModLootTables.registerLootTables();
 
 		//Registry.register(Registries.ITEM_GROUP, Utils.id("item_group"), ITEM_GROUP);
 		Registry.register(Registries.ITEM_GROUP, Utils.id("item_group"), generateItemGroup());

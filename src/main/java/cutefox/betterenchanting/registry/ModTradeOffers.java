@@ -1,6 +1,7 @@
 package cutefox.betterenchanting.registry;
 
 import com.google.common.collect.ImmutableMap;
+import cutefox.betterenchanting.data.ModItemTags;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.block.Blocks;

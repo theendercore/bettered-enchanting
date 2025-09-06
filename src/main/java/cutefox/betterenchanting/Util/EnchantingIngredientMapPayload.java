@@ -6,7 +6,7 @@ import net.minecraft.network.packet.CustomPayload;
 
 import java.util.*;
 
-import cutefox.betterenchanting.datagen.ModEnchantIngredientMap;
+import cutefox.betterenchanting.data.gen.ModEnchantIngredientMap;
 
 public record EnchantingIngredientMapPayload(Map<String, List<String>> map) implements CustomPayload {
     public static final Id<EnchantingIngredientMapPayload> ID = new Id<>(

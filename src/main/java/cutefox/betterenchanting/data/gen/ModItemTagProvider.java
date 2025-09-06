@@ -1,8 +1,7 @@
-package cutefox.betterenchanting.datagen;
+package cutefox.betterenchanting.data.gen;
 
-import com.terraformersmc.modmenu.util.mod.Mod;
 import cutefox.betterenchanting.BetterEnchanting;
-import cutefox.betterenchanting.registry.ModItemTags;
+import cutefox.betterenchanting.data.ModItemTags;
 import cutefox.betterenchanting.registry.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;

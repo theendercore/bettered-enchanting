@@ -1,7 +1,6 @@
-package cutefox.betterenchanting.datagen;
+package cutefox.betterenchanting.data.gen;
 
 
-import com.terraformersmc.modmenu.util.mod.Mod;
 import cutefox.betterenchanting.BetterEnchanting;
 import cutefox.betterenchanting.Util.Utils;
 import cutefox.betterenchanting.conditions.BumblezoneCompatCondition;

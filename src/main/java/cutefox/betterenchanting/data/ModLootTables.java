@@ -1,6 +1,5 @@
-package cutefox.betterenchanting.registry;
+package cutefox.betterenchanting.data;
 
-import cutefox.betterenchanting.BetterEnchanting;
 import cutefox.betterenchanting.Util.Utils;
 import net.minecraft.loot.LootTable;
 import net.minecraft.registry.RegistryKey;
@@ -12,12 +11,7 @@ public class ModLootTables {
     public static final RegistryKey<LootTable> ENCHANTMENT_INGREDIENT_TABLE = register("enchantment_ingredient");
     public static final RegistryKey<LootTable> ENCHANTMENT_LOOT = register("enchantment_loot");
 
-    public static void registerLootTables(){
-        BetterEnchanting.LOGGER.info("Registering loot tables for "+ BetterEnchanting.MOD_ID);
-    }
-
     private static RegistryKey<LootTable> register(String id) {
         return RegistryKey.of(RegistryKeys.LOOT_TABLE, Utils.id(id));
     }
-
 }

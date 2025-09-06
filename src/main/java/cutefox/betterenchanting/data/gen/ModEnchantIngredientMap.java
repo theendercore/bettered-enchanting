@@ -1,4 +1,4 @@
-package cutefox.betterenchanting.datagen;
+package cutefox.betterenchanting.data.gen;
 
 import com.google.common.base.Charsets;
 import com.google.gson.Gson;

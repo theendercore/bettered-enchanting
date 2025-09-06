@@ -1,7 +1,7 @@
-package cutefox.betterenchanting.datagen;
+package cutefox.betterenchanting.data.gen;
 
-import cutefox.betterenchanting.registry.ModItemTags;
-import cutefox.betterenchanting.registry.ModLootTables;
+import cutefox.betterenchanting.data.ModItemTags;
+import cutefox.betterenchanting.data.ModLootTables;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableProvider;
 import net.minecraft.loot.LootPool;
