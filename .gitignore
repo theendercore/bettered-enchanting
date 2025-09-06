@@ -42,4 +42,4 @@ replay_*.log
 # Asprite
 *.ase
 *.aseprite
-src/main/generated/.cache/
+src/main/generated/

@@ -22,7 +22,7 @@
           "cutefox.betterenchanting.client.BetterEnchantingClient"
 		],
 		"fabric-datagen": [
-			"cutefox.betterenchanting.datagen.ModDataGenerator"
+			"cutefox.betterenchanting.data.gen.ModDataGenerator"
 		],
 		"modmenu": [
 			"cutefox.betterenchanting.client.config.ModMenuIntegration"
