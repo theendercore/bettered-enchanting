@@ -107,7 +107,7 @@ tasks.withType(JavaCompile).configureEach {
 }
 loom {
 	splitEnvironmentSourceSets()
-	accessWidenerPath = file("src/main/resources/betterenchanting.accesswidener")
+	accessWidenerPath = file("src/main/resources/bettered_enchanting.accesswidener")
 }
 
 java {

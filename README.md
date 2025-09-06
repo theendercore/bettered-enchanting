@@ -1,4 +1,4 @@
-# better-enchanting
+# Bettered Enchanting
 
 # 🏳️‍🌈 Better Enchanting Mod (For Fabric/Quilt)
 Welcome to Better Enchanting for Minecraft. This mod is a total rework on how enchanting is managed in Minecraft. The whole enhanting porcess is closer to a skill-tree now, and enchanted books have totally disappeared from the game.
@@ -25,12 +25,12 @@ exclusiveContent {
 
 and either
 ```
-modImplementation "maven.modrinth:better-enchanting:BETTER_ENCHANTING_VERSION"
+modImplementation "maven.modrinth:bettered_enchanting:BETTER_ENCHANTING_VERSION"
 ```
 or
 
 ```
-modCompileOnly "maven.modrinth:better-enchanting:BETTER_ENCHANTING_VERSION"
+modCompileOnly "maven.modrinth:bettered_enchanting:BETTER_ENCHANTING_VERSION"
 ```
 
 depending or wherase you whant Better Enchanting to be optional or not to work with your mod.
@@ -38,10 +38,7 @@ depending or wherase you whant Better Enchanting to be optional or not to work w
 You can then call anywhere in your code :
 
 ``` java
-//This one if you have a direct reference to an Enchantment object
-BetterEnchantingApi.addEnchantmentIngredient(MyModEnchantments.CUSTOM_ENCHANT, List.of(Items.SUGAR, Items.DIAMOND, MyModItems.ESSENCE_OF_CUSTOM_MOD));
-//This one if don't. Can work with an Identifer oject as well.
-BetterEnchantingApi.addEnchantmentIngredient("mymod:my_custom_enchantment", List.of(Items.SUGAR, Items.DIAMOND, MyModItems.ESSENCE_OF_CUSTOM_MOD));
+// Will be data driven
 ```
 > [!WARNING]
 > These call must be made befor the Fabric event `ServerLifecycleEvents.SERVER_STARTED` as the map of Enchantments/Items is created at this mark.

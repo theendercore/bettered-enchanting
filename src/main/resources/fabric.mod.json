@@ -1,37 +1,35 @@
 {
 	"schemaVersion": 1,
-	"id": "betterenchanting",
+	"id": "bettered_enchanting",
 	"version": "${version}",
-	"name": "Better Enchanting",
+	"name": "Bettered Enchanting",
 	"description": "A complete overhaul of the enchanting system of Minecraft to make it rely less on randomness and tie it to exploration and game progression.",
-	"authors": [
-		"_TheCuteFox_"
-	],
+	"authors": [ "_TheCuteFox_", "TheEnderCore" ],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/Akinesis/better-enchanting"
+		"sources": "https://github.com/TheEnderCore/bettered_enchanting"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/betterenchanting/icon.png",
+	"icon": "assets/bettered_enchanting/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"cutefox.betterenchanting.BetterEnchanting"
+			"cutefox.bettered_enchanting.BetteredEnchanting"
 		],
 		"client": [
-          "cutefox.betterenchanting.client.BetterEnchantingClient"
+			"cutefox.bettered_enchanting.client.BetteredEnchantingClient"
 		],
 		"fabric-datagen": [
-			"cutefox.betterenchanting.data.gen.ModDataGenerator"
+			"cutefox.bettered_enchanting.data.gen.ModDataGenerator"
 		],
 		"modmenu": [
-			"cutefox.betterenchanting.client.config.ModMenuIntegration"
+			"cutefox.bettered_enchanting.client.config.ModMenuIntegration"
 		]
 	},
 	"mixins": [
-		"better-enchanting.mixins.json"
+		"bettered_enchanting.mixins.json"
 	],
-	"accessWidener" : "betterenchanting.accesswidener",
+	"accessWidener" : "bettered_enchanting.accesswidener",
 	"depends": {
 		"fabricloader": ">=0.15.11",
 		"minecraft": "~1.21",
