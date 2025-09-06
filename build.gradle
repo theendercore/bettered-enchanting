@@ -37,6 +37,11 @@ repositories {
 		url = "https://maven.terraformersmc.com/"
 	}
 
+	maven() {
+		name = "FzzyMaven"
+		url = "https://maven.fzzyhmstrs.me/"
+	}
+
 }
 
 fabricApi {
@@ -79,6 +84,11 @@ dependencies {
 	//trinkets
 	modCompileOnly("maven.modrinth:5aaWibi9:JagCscwi")
 
+
+	//Emi
+	modImplementation("dev.emi:emi-fabric:${project.emi_version}")
+	modImplementation("maven.modrinth:emi-loot:${project.emi_loot_version}")
+	modImplementation("me.fzzyhmstrs:fzzy_config:${project.fzzy_config_version}")
 }
 
 processResources {
