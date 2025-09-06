@@ -1,9 +1,10 @@
-package cutefox.betterenchanting.screen;
+package cutefox.betterenchanting.client.screen;
 
 import com.google.common.collect.Lists;
 import com.mojang.blaze3d.systems.RenderSystem;
 import cutefox.betterenchanting.Util.ModEnchantmentHelper;
 import cutefox.betterenchanting.Util.Utils;
+import cutefox.betterenchanting.screen.CustomEnchantmentScreenHandler;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.DrawContext;

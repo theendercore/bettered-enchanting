@@ -1,10 +1,8 @@
-package cutefox.betterenchanting.config;
+package cutefox.betterenchanting.client.config;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
-import eu.midnightdust.lib.config.MidnightConfig;
-
-import java.util.Map;
+import cutefox.betterenchanting.config.GlobalConfig;
 
 public class ModMenuIntegration implements ModMenuApi {
 

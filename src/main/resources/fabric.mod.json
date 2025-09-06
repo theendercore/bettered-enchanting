@@ -19,13 +19,13 @@
 			"cutefox.betterenchanting.BetterEnchanting"
 		],
 		"client": [
-			"cutefox.betterenchanting.BetterEnchantingClient"
+          "cutefox.betterenchanting.client.BetterEnchantingClient"
 		],
 		"fabric-datagen": [
 			"cutefox.betterenchanting.datagen.ModDataGenerator"
 		],
 		"modmenu": [
-			"cutefox.betterenchanting.config.ModMenuIntegration"
+			"cutefox.betterenchanting.client.config.ModMenuIntegration"
 		]
 	},
 	"mixins": [
