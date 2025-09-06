@@ -1,7 +1,7 @@
 package cutefox.betterenchanting.data.gen.prov;
 
 import cutefox.betterenchanting.BetterEnchanting;
-import cutefox.betterenchanting.registry.BEItems;
+import cutefox.betterenchanting.init.BEItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;

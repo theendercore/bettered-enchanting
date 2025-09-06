@@ -2,7 +2,7 @@ package cutefox.betterenchanting.mixin;
 
 import cutefox.betterenchanting.Util.ModEnchantmentHelper;
 import cutefox.betterenchanting.config.GlobalConfig;
-import cutefox.betterenchanting.registry.BEItems;
+import cutefox.betterenchanting.init.BEItems;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.fabricmc.fabric.api.item.v1.EnchantingContext;
 import net.minecraft.component.DataComponentTypes;

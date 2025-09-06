@@ -1,6 +1,6 @@
 package cutefox.betterenchanting.mixin;
 
-import cutefox.betterenchanting.registry.BEItems;
+import cutefox.betterenchanting.init.BEItems;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.ItemEnchantmentsComponent;

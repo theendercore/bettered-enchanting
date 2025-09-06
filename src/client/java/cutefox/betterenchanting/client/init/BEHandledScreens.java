@@ -1,8 +1,8 @@
-package cutefox.betterenchanting.client.registry;
+package cutefox.betterenchanting.client.init;
 
 import cutefox.betterenchanting.BetterEnchanting;
 import cutefox.betterenchanting.client.screen.CustomEnchantmentScreen;
-import cutefox.betterenchanting.registry.BEScreenHandlerType;
+import cutefox.betterenchanting.init.BEScreenHandlerType;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;

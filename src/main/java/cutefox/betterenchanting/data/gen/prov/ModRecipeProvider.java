@@ -5,7 +5,7 @@ import cutefox.betterenchanting.BetterEnchanting;
 import cutefox.betterenchanting.Util.Utils;
 import cutefox.betterenchanting.conditions.BumblezoneCompatCondition;
 import cutefox.betterenchanting.conditions.NeoEnchantCompatCondition;
-import cutefox.betterenchanting.registry.BEItems;
+import cutefox.betterenchanting.init.BEItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceCondition;

@@ -2,7 +2,7 @@ package cutefox.betterenchanting.data.gen.prov;
 
 import cutefox.betterenchanting.BetterEnchanting;
 import cutefox.betterenchanting.data.ModItemTags;
-import cutefox.betterenchanting.registry.BEItems;
+import cutefox.betterenchanting.init.BEItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.item.Items;

@@ -1,6 +1,6 @@
 package cutefox.betterenchanting.Util;
 
-import cutefox.betterenchanting.registry.ModEnchantIngredientMap;
+import cutefox.betterenchanting.init.ModEnchantIngredientMap;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.network.packet.CustomPayload;

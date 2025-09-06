@@ -1,8 +1,8 @@
 package cutefox.betterenchanting.client;
 
 import cutefox.betterenchanting.Util.EnchantingIngredientMapPayload;
-import cutefox.betterenchanting.client.registry.BEHandledScreens;
-import cutefox.betterenchanting.registry.ModEnchantIngredientMap;
+import cutefox.betterenchanting.client.init.BEHandledScreens;
+import cutefox.betterenchanting.init.ModEnchantIngredientMap;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 

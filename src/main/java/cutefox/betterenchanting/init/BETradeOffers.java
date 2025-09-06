@@ -1,4 +1,4 @@
-package cutefox.betterenchanting.registry;
+package cutefox.betterenchanting.init;
 
 import com.google.common.collect.ImmutableMap;
 import cutefox.betterenchanting.data.ModItemTags;

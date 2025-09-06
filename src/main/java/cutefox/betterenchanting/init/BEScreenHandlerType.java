@@ -1,4 +1,4 @@
-package cutefox.betterenchanting.registry;
+package cutefox.betterenchanting.init;
 
 import cutefox.betterenchanting.BetterEnchanting;
 import cutefox.betterenchanting.Util.Utils;

@@ -1,4 +1,4 @@
-package cutefox.betterenchanting.registry;
+package cutefox.betterenchanting.init;
 
 import com.google.common.base.Charsets;
 import com.google.gson.Gson;
