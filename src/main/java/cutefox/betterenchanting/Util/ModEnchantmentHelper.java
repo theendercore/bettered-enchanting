@@ -5,7 +5,7 @@ import com.llamalad7.mixinextras.sugar.Local;
 import com.llamalad7.mixinextras.sugar.ref.LocalRef;
 import cutefox.betterenchanting.BetterEnchanting;
 import cutefox.betterenchanting.config.GlobalConfig;
-import cutefox.betterenchanting.data.gen.prov.ModEnchantIngredientMap;
+import cutefox.betterenchanting.registry.ModEnchantIngredientMap;
 import cutefox.betterenchanting.data.ModEnchantmentTags;
 import cutefox.betterenchanting.registry.BEItems;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;

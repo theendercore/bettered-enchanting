@@ -1,4 +1,4 @@
-package cutefox.betterenchanting.data.gen.prov;
+package cutefox.betterenchanting.registry;
 
 import com.google.common.base.Charsets;
 import com.google.gson.Gson;
@@ -9,7 +9,6 @@ import com.telepathicgrunt.the_bumblezone.modinit.BzEnchantments;
 import com.telepathicgrunt.the_bumblezone.modinit.BzItems;
 import cutefox.betterenchanting.BetterEnchanting;
 import cutefox.betterenchanting.Util.Utils;
-import cutefox.betterenchanting.registry.BEItems;
 import io.netty.buffer.ByteBuf;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.enchantment.Enchantment;

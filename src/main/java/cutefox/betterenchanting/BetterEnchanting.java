@@ -4,7 +4,7 @@ import cutefox.betterenchanting.Util.EnchantingIngredientMapPayload;
 import cutefox.betterenchanting.Util.Utils;
 import cutefox.betterenchanting.conditions.ModConfigConditions;
 import cutefox.betterenchanting.config.GlobalConfig;
-import cutefox.betterenchanting.data.gen.prov.ModEnchantIngredientMap;
+import cutefox.betterenchanting.registry.ModEnchantIngredientMap;
 import cutefox.betterenchanting.registry.*;
 import eu.midnightdust.lib.config.MidnightConfig;
 import net.fabricmc.api.ModInitializer;

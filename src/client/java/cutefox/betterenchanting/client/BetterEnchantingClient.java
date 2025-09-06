@@ -3,7 +3,7 @@ package cutefox.betterenchanting.client;
 import java.util.*;
 
 import cutefox.betterenchanting.Util.EnchantingIngredientMapPayload;
-import cutefox.betterenchanting.data.gen.prov.ModEnchantIngredientMap;
+import cutefox.betterenchanting.registry.ModEnchantIngredientMap;
 import cutefox.betterenchanting.client.registry.BEHandledScreens;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
