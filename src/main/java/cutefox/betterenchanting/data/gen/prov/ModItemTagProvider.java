@@ -19,7 +19,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        BetterEnchanting.LOGGER.info("Generating Item tags for : " + BetterEnchanting.MOD_ID);
+        BetterEnchanting.LOGGER.info("Generating Item tags for : " + BetterEnchanting.MODID);
 
         getOrCreateTagBuilder(ModItemTags.LIBRARIAN_RARE_INGREDIENT)
                 .add(Items.EXPERIENCE_BOTTLE)

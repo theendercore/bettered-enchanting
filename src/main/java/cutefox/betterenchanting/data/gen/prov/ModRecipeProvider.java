@@ -2,7 +2,6 @@ package cutefox.betterenchanting.data.gen.prov;
 
 
 import cutefox.betterenchanting.BetterEnchanting;
-import cutefox.betterenchanting.Util.Utils;
 import cutefox.betterenchanting.conditions.BumblezoneCompatCondition;
 import cutefox.betterenchanting.conditions.NeoEnchantCompatCondition;
 import cutefox.betterenchanting.init.BEItems;
@@ -34,7 +33,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter exporter) {
-        BetterEnchanting.LOGGER.info("Generating recipes for : " + BetterEnchanting.MOD_ID);
+        BetterEnchanting.LOGGER.info("Generating recipes for : " + BetterEnchanting.MODID);
 
         //region UPGRADE TEMPLATE
 
@@ -47,7 +46,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
                 .criterion(hasItem(Items.SMITHING_TABLE), conditionsFromItem(Items.SMITHING_TABLE))
                 .criterion(hasItem(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id(getRecipeName(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, BEItems.ENCHANTMENT_CATALYST, 1)
                 .pattern(" D ")
@@ -62,7 +61,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(BEItems.MAGIC_SHARD_DULL), conditionsFromItem(BEItems.MAGIC_SHARD_DULL))
                 .criterion(hasItem(BEItems.INFUSED_LAPIS), conditionsFromItem(BEItems.INFUSED_LAPIS))
                 .criterion(hasItem(Items.GRINDSTONE), conditionsFromItem(Items.GRINDSTONE))
-                .offerTo(exporter, Utils.id(getRecipeName(BEItems.ENCHANTMENT_CATALYST)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(BEItems.ENCHANTMENT_CATALYST)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE, 1)
                 .pattern("DID")
@@ -74,7 +73,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.SMITHING_TABLE), conditionsFromItem(Items.SMITHING_TABLE))
                 .criterion(hasItem(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE))
                 .criterion(hasItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id(getRecipeName(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE)));
 
         //endregion
 
@@ -88,7 +87,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.TOOLS,
                         Items.IRON_AXE)
                 .criterion(hasItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("iron_axe_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("iron_axe_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
                         Ingredient.ofItems(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE),
@@ -97,7 +96,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.TOOLS,
                         Items.IRON_PICKAXE)
                 .criterion(hasItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("iron_pickaxe_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("iron_pickaxe_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
                         Ingredient.ofItems(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE),
@@ -106,7 +105,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.TOOLS,
                         Items.IRON_HOE)
                 .criterion(hasItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("iron_hoe_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("iron_hoe_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
                         Ingredient.ofItems(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE),
@@ -115,7 +114,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.TOOLS,
                         Items.IRON_SHOVEL)
                 .criterion(hasItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("iron_shovel_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("iron_shovel_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
                         Ingredient.ofItems(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE),
@@ -124,7 +123,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.COMBAT,
                         Items.IRON_SWORD)
                 .criterion(hasItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("iron_sword_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("iron_sword_smithing"));
 
         //Gold to Diamond
 
@@ -135,7 +134,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.TOOLS,
                         Items.DIAMOND_AXE)
                 .criterion(hasItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("diamond_gold_axe_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("diamond_gold_axe_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
                         Ingredient.ofItems(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE),
@@ -144,7 +143,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.TOOLS,
                         Items.DIAMOND_PICKAXE)
                 .criterion(hasItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("diamond_gold_pickaxe_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("diamond_gold_pickaxe_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
                         Ingredient.ofItems(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE),
@@ -153,7 +152,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.TOOLS,
                         Items.DIAMOND_HOE)
                 .criterion(hasItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("diamond_gold_hoe_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("diamond_gold_hoe_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
                         Ingredient.ofItems(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE),
@@ -162,7 +161,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.TOOLS,
                         Items.DIAMOND_SHOVEL)
                 .criterion(hasItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("diamond_gold_shovel_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("diamond_gold_shovel_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
                         Ingredient.ofItems(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE),
@@ -171,7 +170,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.COMBAT,
                         Items.DIAMOND_SWORD)
                 .criterion(hasItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("diamond_gold_sword_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("diamond_gold_sword_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
                         Ingredient.ofItems(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE),
@@ -180,7 +179,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.COMBAT,
                         Items.DIAMOND_HELMET)
                 .criterion(hasItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("diamond_gold_helmet_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("diamond_gold_helmet_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
                         Ingredient.ofItems(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE),
@@ -189,7 +188,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.COMBAT,
                         Items.DIAMOND_CHESTPLATE)
                 .criterion(hasItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("diamond_gold_chestplate_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("diamond_gold_chestplate_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
                         Ingredient.ofItems(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE),
@@ -198,7 +197,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.COMBAT,
                         Items.DIAMOND_LEGGINGS)
                 .criterion(hasItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("diamond_gold_leggings_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("diamond_gold_leggings_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
                         Ingredient.ofItems(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE),
@@ -207,7 +206,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.COMBAT,
                         Items.DIAMOND_BOOTS)
                 .criterion(hasItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("diamond_gold_boots_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("diamond_gold_boots_smithing"));
 
         //Iron to Diamond
 
@@ -218,7 +217,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.TOOLS,
                         Items.DIAMOND_AXE)
                 .criterion(hasItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("diamond_iron_axe_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("diamond_iron_axe_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
                         Ingredient.ofItems(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE),
@@ -227,7 +226,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.TOOLS,
                         Items.DIAMOND_PICKAXE)
                 .criterion(hasItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("diamond_iron_pickaxe_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("diamond_iron_pickaxe_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
                         Ingredient.ofItems(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE),
@@ -236,7 +235,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.TOOLS,
                         Items.DIAMOND_HOE)
                 .criterion(hasItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("diamond_iron_hoe_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("diamond_iron_hoe_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
                         Ingredient.ofItems(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE),
@@ -245,7 +244,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.TOOLS,
                         Items.DIAMOND_SHOVEL)
                 .criterion(hasItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("diamond_iron_shovel_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("diamond_iron_shovel_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
                         Ingredient.ofItems(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE),
@@ -254,7 +253,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.COMBAT,
                         Items.DIAMOND_SWORD)
                 .criterion(hasItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("diamond_iron_sword_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("diamond_iron_sword_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
                         Ingredient.ofItems(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE),
@@ -263,7 +262,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.COMBAT,
                         Items.DIAMOND_HELMET)
                 .criterion(hasItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("diamond_iron_helmet_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("diamond_iron_helmet_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
                         Ingredient.ofItems(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE),
@@ -272,7 +271,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.COMBAT,
                         Items.DIAMOND_CHESTPLATE)
                 .criterion(hasItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("diamond_iron_chestplate_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("diamond_iron_chestplate_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
                         Ingredient.ofItems(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE),
@@ -281,7 +280,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.COMBAT,
                         Items.DIAMOND_LEGGINGS)
                 .criterion(hasItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("diamond_iron_leggings_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("diamond_iron_leggings_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
                         Ingredient.ofItems(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE),
@@ -290,7 +289,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.COMBAT,
                         Items.DIAMOND_BOOTS)
                 .criterion(hasItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE))
-                .offerTo(exporter, Utils.id("diamond_iron_boots_smithing"));
+                .offerTo(exporter, BetterEnchanting.id("diamond_iron_boots_smithing"));
 
         //endregion
 
@@ -307,7 +306,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.AMETHYST_SHARD), conditionsFromItem(Items.AMETHYST_SHARD))
                 .criterion(hasItem(Items.GHAST_TEAR), conditionsFromItem(Items.GHAST_TEAR))
                 .criterion(hasItem(BEItems.INFUSED_LAPIS), conditionsFromItem(BEItems.INFUSED_LAPIS))
-                .offerTo(exporter, Utils.id(getRecipeName(BEItems.MAGIC_SHARD_DULL)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(BEItems.MAGIC_SHARD_DULL)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, BEItems.MAGIC_SHARD_FULL, 1)
                 .pattern(" B ")
@@ -321,7 +320,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.EXPERIENCE_BOTTLE), conditionsFromItem(Items.EXPERIENCE_BOTTLE))
                 .criterion(hasItem(BEItems.INFUSED_LAPIS), conditionsFromItem(BEItems.INFUSED_LAPIS))
                 .criterion(hasItem(BEItems.MAGIC_SHARD_DULL), conditionsFromItem(BEItems.MAGIC_SHARD_DULL))
-                .offerTo(exporter, Utils.id(getRecipeName(BEItems.MAGIC_SHARD_FULL)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(BEItems.MAGIC_SHARD_FULL)));
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, BEItems.INFUSED_LAPIS, 1)
                 .input(Items.LAPIS_LAZULI)
@@ -330,7 +329,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.LAPIS_LAZULI), conditionsFromItem(Items.LAPIS_LAZULI))
                 .criterion(hasItem(Items.AMETHYST_SHARD), conditionsFromItem(Items.AMETHYST_SHARD))
                 .criterion(hasItem(Items.QUARTZ), conditionsFromItem(Items.QUARTZ))
-                .offerTo(exporter, Utils.id(getRecipeName(BEItems.INFUSED_LAPIS)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(BEItems.INFUSED_LAPIS)));
 
         //Essences
         Item recipeItem = BEItems.ESSENCE_OF_PROTECTION;
@@ -344,7 +343,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.NETHERITE_SCRAP)
                 .input('D', Items.CRYING_OBSIDIAN)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_FIRE_PROTECTION;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -357,7 +356,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('E', Items.END_STONE)
                 .input('D', Items.DRAGON_BREATH)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_BLAST_PROTECTION;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -371,7 +370,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('O', Items.OBSIDIAN)
                 .input('C', Items.TNT)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_PROJECTILE_PROTECTION;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -384,7 +383,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('H', Items.SKELETON_SKULL)
                 .input('B', Items.ARMADILLO_SCUTE)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_FEATHER;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -397,7 +396,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('G', Items.GLOWSTONE)
                 .input('A', Items.SHULKER_BOX)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_RESPIRATION;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -410,7 +409,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('C', Items.HEART_OF_THE_SEA)
                 .input('R', Items.DARK_PRISMARINE)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_SEA;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -423,7 +422,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('C', Items.CONDUIT)
                 .input('L', Items.PRISMARINE_CRYSTALS)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_THORN;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -436,7 +435,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('D', Items.DRAGON_BREATH)
                 .input('B', Items.BLAZE_ROD)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_ICE;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -449,7 +448,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.SNOW_BLOCK)
                 .input('C', Items.ECHO_SHARD)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_SHARPNESS;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -462,7 +461,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.GRINDSTONE)
                 .input('C', Items.NETHERITE_INGOT)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_SMITE;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -475,7 +474,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.SMOOTH_QUARTZ)
                 .input('C', Items.END_CRYSTAL)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_ARTHROPODS;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -488,7 +487,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.DEEPSLATE)
                 .input('C', Items.CHORUS_FRUIT)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_KNOCKBACK;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -501,7 +500,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.IRON_BLOCK)
                 .input('C', Items.LODESTONE)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_FIRE;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -514,7 +513,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.LAVA_BUCKET)
                 .input('C', Items.DRAGON_BREATH)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_LOOTING;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -527,7 +526,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.RABBIT_FOOT)
                 .input('C', Items.TORCHFLOWER)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_SWEEPING;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -540,7 +539,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.EMERALD_BLOCK)
                 .input('C', Items.NETHERITE_SCRAP)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_POWER;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -553,7 +552,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.DIAMOND)
                 .input('C', Items.SKELETON_SKULL)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_PUNCH;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -566,7 +565,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.OBSIDIAN)
                 .input('C', Items.TNT)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_ARROWS;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -579,7 +578,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.EMERALD_BLOCK)
                 .input('C', Items.NETHER_STAR)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_EFFICIENCY;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -592,7 +591,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.DIAMOND)
                 .input('C', Items.BEACON)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_SILK_TOUCH;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -607,7 +606,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('D', Items.IRON_BLOCK)
                 .input('E', Items.GOLD_BLOCK)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_FORTUNE;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -620,7 +619,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.EMERALD)
                 .input('C', Items.SHULKER_SHELL)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_SEA_LUCK;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -633,7 +632,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.GLISTERING_MELON_SLICE)
                 .input('C', Items.NAUTILUS_SHELL)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_LURE;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -646,7 +645,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.PRISMARINE_CRYSTALS)
                 .input('C', Items.EMERALD_BLOCK)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_UNBREAKING;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -659,7 +658,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.OBSIDIAN)
                 .input('C', Items.NETHERITE_INGOT)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_MENDING;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -673,7 +672,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('C', BEItems.ESSENCE_OF_EXPERIENCE)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
                 .criterion(hasItem(BEItems.ESSENCE_OF_EXPERIENCE), conditionsFromItem(BEItems.ESSENCE_OF_EXPERIENCE))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_EXPERIENCE;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -686,7 +685,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.EMERALD)
                 .input('C', Items.EXPERIENCE_BOTTLE)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_CHANNELING;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -699,7 +698,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.COPPER_BLOCK)
                 .input('C', Items.IRON_BLOCK)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_IMPALING;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -712,7 +711,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.END_ROD)
                 .input('C', Items.IRON_SWORD)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_LOYALTY;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -725,7 +724,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.GHAST_TEAR)
                 .input('C', Items.LEAD)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_RIPTIDE;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -738,7 +737,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.TNT)
                 .input('C', Items.NAUTILUS_SHELL)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_MULTISHOT;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -751,7 +750,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.BOW)
                 .input('C', Items.DRAGON_BREATH)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_PIERCING;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -764,7 +763,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.END_ROD)
                 .input('C', Items.TRIDENT)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_QUICK_CHARGE;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -777,7 +776,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.PISTON)
                 .input('C', Items.WIND_CHARGE)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_DENSITY;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -790,7 +789,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.OBSIDIAN)
                 .input('C', Items.LODESTONE)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_BREACH;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -803,7 +802,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.MAGMA_CREAM)
                 .input('C', Items.WIND_CHARGE)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_WIND;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -816,7 +815,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('B', Items.WIND_CHARGE)
                 .input('C', Items.ENDER_PEARL)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         //endregion
 
@@ -833,7 +832,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.FERMENTED_SPIDER_EYE)
                 .input('D', Items.SLIME_BLOCK)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_POISON_PROTECTION;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -846,7 +845,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.FERMENTED_SPIDER_EYE)
                 .input('D', Items.CRYING_OBSIDIAN)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_MINING;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -859,7 +858,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.FLINT)
                 .input('D', Items.DIAMOND_PICKAXE)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_SMELTING;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -872,7 +871,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.MAGMA_BLOCK)
                 .input('D', Items.LAVA_BUCKET)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_SIGHT;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -885,7 +884,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.GOLDEN_CARROT)
                 .input('D', Items.DIAMOND)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_LEVITATION;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -898,7 +897,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.PHANTOM_MEMBRANE)
                 .input('D', Items.END_STONE)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_FORAGING;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -911,7 +910,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.OAK_LEAVES)
                 .input('D', Items.ROOTED_DIRT)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_STRIKE;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -924,7 +923,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.GOLD_INGOT)
                 .input('D', Items.COPPER_BLOCK)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_HEALTH;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -937,7 +936,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.HONEY_BLOCK)
                 .input('D', Items.GOLDEN_APPLE)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_VAMPIRISM;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -950,7 +949,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.FLINT)
                 .input('D', Items.DIAMOND_SWORD)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_AGILITY;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -963,7 +962,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.GOLDEN_CARROT)
                 .input('D', Items.WIND_CHARGE)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_COMBAT;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -976,7 +975,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.IRON_SWORD)
                 .input('D', Items.DIAMOND_BLOCK)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_BUILDING;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -989,7 +988,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.CHISELED_DEEPSLATE)
                 .input('D', Items.GRASS_BLOCK)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_FEAR;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -1002,7 +1001,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.TROPICAL_FISH_BUCKET)
                 .input('D', Items.CREEPER_BANNER_PATTERN)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_REACH;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -1015,7 +1014,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.LIGHTNING_ROD)
                 .input('D', Items.END_ROD)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_PULLING;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -1028,7 +1027,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.EGG)
                 .input('D', Items.ZOMBIE_HEAD)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_FOOD;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -1041,7 +1040,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.COOKED_RABBIT)
                 .input('D', Items.GOLDEN_APPLE)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_PHOTOSYNTHESIS;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -1054,7 +1053,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.SMOOTH_QUARTZ)
                 .input('D', Items.GOLDEN_APPLE)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_WINGS;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -1067,7 +1066,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.FEATHER)
                 .input('D', Items.WIND_CHARGE)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_GRAVITY;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -1080,7 +1079,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.RAW_IRON_BLOCK)
                 .input('D', Items.LODESTONE)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         //endregion
 
@@ -1096,7 +1095,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.SLIME_BLOCK)
                 .input('D', Items.ENDER_EYE)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_CAPACITY;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -1109,7 +1108,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.LEATHER_LEGGINGS)
                 .input('D', Items.ENDER_CHEST)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
         //endregion
 
         //region TOSS UP
@@ -1124,7 +1123,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.FIRE_CHARGE)
                 .input('D', Items.NETHER_STAR)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
         //endregion
 
         //region COMABT ROLL
@@ -1139,7 +1138,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', ItemTags.BEDS)
                 .input('D', Items.WIND_CHARGE)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_LONGFOOT;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -1152,7 +1151,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.REDSTONE_BLOCK)
                 .input('D', Items.DIAMOND_BOOTS)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_CRITICAL_SPELL;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -1165,7 +1164,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.REDSTONE_BLOCK)
                 .input('D', Items.EMERALD_BLOCK)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_ENERGY;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -1178,7 +1177,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.LIGHTNING_ROD)
                 .input('D', Items.TRIDENT)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_HASTE;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -1191,7 +1190,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.BLAZE_POWDER)
                 .input('D', Items.DIAMOND)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_MAGIC_PROTECTION;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -1204,7 +1203,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.IRON_BARS)
                 .input('D', Items.CRYING_OBSIDIAN)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_SOULFROST;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -1217,7 +1216,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.SNOW_BLOCK)
                 .input('D', Items.BLUE_ICE)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_SPELL_POWER;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -1230,7 +1229,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.BLAZE_ROD)
                 .input('D', Items.DIAMOND_BOOTS)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_SUNFIRE;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -1243,7 +1242,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.FIRE_CHARGE)
                 .input('D', Items.CAMPFIRE)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
         recipeItem = BEItems.ESSENCE_OF_SPELL_INFINITY;
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, recipeItem, 1)
@@ -1256,7 +1255,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('N', Items.QUARTZ_BLOCK)
                 .input('D', Items.NETHER_STAR)
                 .criterion(hasItem(BEItems.MAGIC_SHARD_FULL), conditionsFromItem(BEItems.MAGIC_SHARD_FULL))
-                .offerTo(exporter, Utils.id(getRecipeName(recipeItem)));
+                .offerTo(exporter, BetterEnchanting.id(getRecipeName(recipeItem)));
 
 
         //endregion

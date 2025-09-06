@@ -103,7 +103,7 @@ public class ModEnchantIngredientMap {
     }
 
     public static void createMap() {
-        BetterEnchanting.LOGGER.info("Creating enchantement ingredient map for mod : " + BetterEnchanting.MOD_ID);
+        BetterEnchanting.LOGGER.info("Creating enchantement ingredient map for mod : " + BetterEnchanting.MODID);
 
     }
 

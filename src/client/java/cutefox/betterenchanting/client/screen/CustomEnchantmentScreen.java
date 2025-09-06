@@ -2,8 +2,8 @@ package cutefox.betterenchanting.client.screen;
 
 import com.google.common.collect.Lists;
 import com.mojang.blaze3d.systems.RenderSystem;
+import cutefox.betterenchanting.BetterEnchanting;
 import cutefox.betterenchanting.Util.ModEnchantmentHelper;
-import cutefox.betterenchanting.Util.Utils;
 import cutefox.betterenchanting.screen.CustomEnchantmentScreenHandler;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -38,14 +38,14 @@ import java.util.Optional;
 
 @Environment(EnvType.CLIENT)
 public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScreenHandler> {
-    private static final Identifier ENCHANTMENT_BOOK_DISABLED = Utils.id("container/enchanting_table/enchantment_book_disabled");
-    private static final Identifier ENCHANTMENT_BOOK_HIGHLIGHTED = Utils.id("container/enchanting_table/enchantment_book_highlighted");
-    private static final Identifier SCROLLER = Utils.id("container/enchanting_table/scroller");
-    private static final Identifier SCROLLER_DISABLED = Utils.id("container/enchanting_table/scroller_disabled");
-    private static final Identifier BOOK_SLOT_SELECTOR = Utils.id("container/enchanting_table/book_slot_selector");
-    private static final Identifier BOOK_GRAY_OVERLAY = Utils.id("container/enchanting_table/book_gray_overlay");
-    private static final Identifier ENCHANTING_TABLE_BACKGROUND = Utils.id("textures/gui/container/custom_enchanting_table.png");
-    private static final Identifier MAGIC_SHARD_FULL = Utils.id("container/enchanting_table/magic_shard_full");
+    private static final Identifier ENCHANTMENT_BOOK_DISABLED = BetterEnchanting.id("container/enchanting_table/enchantment_book_disabled");
+    private static final Identifier ENCHANTMENT_BOOK_HIGHLIGHTED = BetterEnchanting.id("container/enchanting_table/enchantment_book_highlighted");
+    private static final Identifier SCROLLER = BetterEnchanting.id("container/enchanting_table/scroller");
+    private static final Identifier SCROLLER_DISABLED = BetterEnchanting.id("container/enchanting_table/scroller_disabled");
+    private static final Identifier BOOK_SLOT_SELECTOR = BetterEnchanting.id("container/enchanting_table/book_slot_selector");
+    private static final Identifier BOOK_GRAY_OVERLAY = BetterEnchanting.id("container/enchanting_table/book_gray_overlay");
+    private static final Identifier ENCHANTING_TABLE_BACKGROUND = BetterEnchanting.id("textures/gui/container/custom_enchanting_table.png");
+    private static final Identifier MAGIC_SHARD_FULL = BetterEnchanting.id("container/enchanting_table/magic_shard_full");
     private static final Identifier BOOK_TEXTURE = Identifier.ofVanilla("textures/entity/enchanting_table_book.png");
     private static final Identifier CHECKMARK = Identifier.ofVanilla("icon/checkmark");
     private final Random random = Random.create();

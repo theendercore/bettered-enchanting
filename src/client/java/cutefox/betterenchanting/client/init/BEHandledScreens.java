@@ -11,7 +11,7 @@ import net.minecraft.client.gui.screen.ingame.HandledScreens;
 public class BEHandledScreens {
 
     public static void registerModScreen() {
-        BetterEnchanting.LOGGER.info("Registering mod screens for : " + BetterEnchanting.MOD_ID);
+        BetterEnchanting.LOGGER.info("Registering mod screens for : " + BetterEnchanting.MODID);
         HandledScreens.register(BEScreenHandlerType.CUSTOM_ENCHANTMENT_SCREEN_HANDLER, CustomEnchantmentScreen::new);
     }
 

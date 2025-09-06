@@ -9,7 +9,7 @@ import net.minecraft.loot.entry.ItemEntry;
 public class BELootTableModifiers {
 
     public static void modifyLootTables() {
-        BetterEnchanting.LOGGER.info("Modifying loot tables for : " + BetterEnchanting.MOD_ID);
+        BetterEnchanting.LOGGER.info("Modifying loot tables for : " + BetterEnchanting.MODID);
 
         LootTableEvents.MODIFY.register((key, builder, source, registries) -> {
             if (source.isBuiltin() && LootTables.PIGLIN_BARTERING_GAMEPLAY == key) {

@@ -1,7 +1,6 @@
 package cutefox.betterenchanting.init;
 
 import cutefox.betterenchanting.BetterEnchanting;
-import cutefox.betterenchanting.Util.Utils;
 import cutefox.betterenchanting.screen.CustomEnchantmentScreenHandler;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.registry.Registries;
@@ -24,11 +23,11 @@ public class BEScreenHandlerType<T extends ScreenHandler> implements ToggleableF
     }
 
     private static <T extends ScreenHandler> ScreenHandlerType<T> register(String id, ScreenHandlerType.Factory<T> factory) {
-        return (ScreenHandlerType) Registry.register(Registries.SCREEN_HANDLER, Utils.id(id), new ScreenHandlerType(factory, FeatureFlags.VANILLA_FEATURES));
+        return (ScreenHandlerType) Registry.register(Registries.SCREEN_HANDLER, BetterEnchanting.id(id), new ScreenHandlerType(factory, FeatureFlags.VANILLA_FEATURES));
     }
 
     public static void registerModScreenHandlers() {
-        BetterEnchanting.LOGGER.info("Registering mod screen handlers for : " + BetterEnchanting.MOD_ID);
+        BetterEnchanting.LOGGER.info("Registering mod screen handlers for : " + BetterEnchanting.MODID);
     }
 
     public BEScreenHandlerType(ScreenHandlerType.Factory<T> factory, FeatureSet requiredFeatures) {

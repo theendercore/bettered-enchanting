@@ -1,20 +1,9 @@
 package cutefox.betterenchanting.Util;
 
 import net.minecraft.registry.DynamicRegistryManager;
-import net.minecraft.util.Identifier;
 
 public class Utils {
-
     private static DynamicRegistryManager registryManager;
-
-    public static Identifier id(String path) {
-        return Identifier.of("betterenchanting", path);
-    }
-
-    public static Identifier id() {
-        return Identifier.of("betterenchanting");
-    }
-
 
     public static DynamicRegistryManager getRegistryManager() {
         return registryManager;
