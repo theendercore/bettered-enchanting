@@ -37,9 +37,7 @@ public class BEItems {
     public static final Item ESSENCE_OF_FIRE_PROTECTION = registerItem("essence_of_fire_protection", essence());
     public static final Item ESSENCE_OF_BLAST_PROTECTION = registerItem("essence_of_blast_protection", essence());
     public static final Item ESSENCE_OF_PROJECTILE_PROTECTION = registerItem("essence_of_projectile_protection", essence());
-    public static final Item SOUL_ESSENCE_1 = registerItem("soul_essence_1", essence());
-    public static final Item SOUL_ESSENCE_2 = registerItem("soul_essence_2", new Item(new Item.Settings().maxCount(1).fireproof().component(DataComponentTypes.ENCHANTMENT_GLINT_OVERRIDE, true).recipeRemainder(BEItems.SOUL_ESSENCE_1)));
-    public static final Item SOUL_ESSENCE_3 = registerItem("soul_essence_3", new Item(new Item.Settings().maxCount(1).fireproof().component(DataComponentTypes.ENCHANTMENT_GLINT_OVERRIDE, true).recipeRemainder(BEItems.SOUL_ESSENCE_2)));
+    public static final Item SOUL_ESSENCE = registerItem("soul_essence", essence());
     public static final Item ESSENCE_OF_SNEAK_1 = registerItem("essence_of_sneak_1", essence());
     public static final Item ESSENCE_OF_SNEAK_2 = registerItem("essence_of_sneak_2", new Item(new Item.Settings().maxCount(1).fireproof().component(DataComponentTypes.ENCHANTMENT_GLINT_OVERRIDE, true).recipeRemainder(BEItems.ESSENCE_OF_SNEAK_1)));
     public static final Item ESSENCE_OF_SNEAK_3 = registerItem("essence_of_sneak_3", new Item(new Item.Settings().maxCount(1).fireproof().component(DataComponentTypes.ENCHANTMENT_GLINT_OVERRIDE, true).recipeRemainder(BEItems.ESSENCE_OF_SNEAK_2)));

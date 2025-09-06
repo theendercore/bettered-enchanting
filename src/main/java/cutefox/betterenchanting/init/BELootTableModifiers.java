@@ -15,9 +15,7 @@ public class BELootTableModifiers {
             if (source.isBuiltin() && LootTables.PIGLIN_BARTERING_GAMEPLAY == key) {
 
                 builder.modifyPools(p -> {
-                    p.with(ItemEntry.builder(BEItems.SOUL_ESSENCE_1).weight(5))
-                            .with(ItemEntry.builder(BEItems.SOUL_ESSENCE_2).weight(5))
-                            .with(ItemEntry.builder(BEItems.SOUL_ESSENCE_3).weight(5));
+                    p.with(ItemEntry.builder(BEItems.SOUL_ESSENCE).weight(15));
                 });
             }
         });

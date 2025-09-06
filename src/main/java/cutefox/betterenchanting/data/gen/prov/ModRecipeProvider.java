@@ -333,18 +333,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, Utils.id(getRecipeName(BEItems.INFUSED_LAPIS)));
 
 
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, BEItems.SOUL_ESSENCE_1, 1)
-                .input(BEItems.SOUL_ESSENCE_2)
-                .criterion(hasItem(BEItems.SOUL_ESSENCE_2), conditionsFromItem(BEItems.SOUL_ESSENCE_2))
-                .criterion(hasItem(BEItems.SOUL_ESSENCE_1), conditionsFromItem(BEItems.SOUL_ESSENCE_1))
-                .offerTo(exporter, Utils.id(getRecipeName(BEItems.SOUL_ESSENCE_1)));
-
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, BEItems.SOUL_ESSENCE_2, 1)
-                .input(BEItems.SOUL_ESSENCE_3)
-                .criterion(hasItem(BEItems.SOUL_ESSENCE_3), conditionsFromItem(BEItems.SOUL_ESSENCE_3))
-                .criterion(hasItem(BEItems.SOUL_ESSENCE_2), conditionsFromItem(BEItems.SOUL_ESSENCE_2))
-                .offerTo(exporter, Utils.id(getRecipeName(BEItems.SOUL_ESSENCE_2)));
-
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, BEItems.ESSENCE_OF_SNEAK_1, 1)
                 .input(BEItems.ESSENCE_OF_SNEAK_2)
                 .criterion(hasItem(BEItems.ESSENCE_OF_SNEAK_2), conditionsFromItem(BEItems.ESSENCE_OF_SNEAK_2))
