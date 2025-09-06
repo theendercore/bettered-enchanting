@@ -1,18 +1,18 @@
 {
-	"required": true,
-	"package": "cutefox.bettered_enchanting.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"AnvilScreenHandlerMixin",
-		"EnchantingTableMixin",
-		"ForgingScreenHandlerMixin",
-		"LootTableMixin",
-		"MixinTradeOffers",
-		"VaultBlockEntityMixin",
-		"GrindstoneScreenHandlerMixin",
-		"ScreenHandlerMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
+  "required": true,
+  "package": "cutefox.bettered_enchanting.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AnvilScreenHandlerMixin",
+    "EnchantingTableMixin",
+    "ForgingScreenHandlerMixin",
+    "GrindstoneScreenHandlerMixin",
+    "LootTableMixin",
+    "MixinTradeOffers",
+    "ScreenHandlerMixin",
+    "VaultBlockEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
 	}
 }

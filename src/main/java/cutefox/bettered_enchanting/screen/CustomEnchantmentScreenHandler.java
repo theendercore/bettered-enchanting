@@ -1,6 +1,7 @@
 package cutefox.bettered_enchanting.screen;
 
 import com.mojang.datafixers.util.Pair;
+import cutefox.bettered_enchanting.Util.BEEnchantingHelper;
 import cutefox.bettered_enchanting.Util.ModEnchantmentHelper;
 import cutefox.bettered_enchanting.config.GlobalConfig;
 import cutefox.bettered_enchanting.init.BEItems;
@@ -177,7 +178,7 @@ public class CustomEnchantmentScreenHandler extends ScreenHandler {
                 int enchantLevelCost = ModEnchantmentHelper.getEnchantmentLevelCost(enchantment, displayedEnchantLevel, itemToEnchant, player.getWorld());
                 int enchantLevReq = ModEnchantmentHelper.getEnchantmentLeveRequierment(enchantment, displayedEnchantLevel);
                 //Item enchantIngredient = ModEnchantmentHelper.getEnchantIngredient(enchantEntry1.getKey().get(), level);
-                Item enchantIngredient = ModEnchantmentHelper.getEnchantIngredient(enchantment, level);
+                Item enchantIngredient = BEEnchantingHelper.getEnchantIngredient(player.getWorld().getRegistryManager(), enchant.get().registryKey(), level);
                 int enchantIngredientCost = ModEnchantmentHelper.getEnchantmentIngredientCost(enchantment, displayedEnchantLevel, enchantIngredient);
                 int tempLapisCost = (int) Math.floor(enchantLevelCost / 2);
                 int lapisCost = tempLapisCost <= 0 ? 1 : tempLapisCost;

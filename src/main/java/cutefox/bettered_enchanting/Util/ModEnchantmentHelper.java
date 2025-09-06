@@ -85,14 +85,6 @@ public class ModEnchantmentHelper {
         return tempReq <= 3 ? 0 : tempReq;
     }
 
-    public static Item getEnchantIngredient(Enchantment enchantment, int enchantLevel) {
-        return ModEnchantIngredientMap.getIngredientOfLevel(enchantment, enchantLevel);
-    }
-
-    public static List<Item> getIngredientsOfEnchantment(Enchantment enchantment) {
-        return ModEnchantIngredientMap.getIngredientsOfEnchantment(enchantment);
-    }
-
     public static int getEnchantmentIngredientCost(Enchantment value, int displayedEnchantLevel, Item ingredient) {
         if (GlobalConfig.overideItemCost) {
             if (GlobalConfig.overidenItemCost > ingredient.getMaxCount())

@@ -3,6 +3,7 @@ package cutefox.bettered_enchanting.client.screen;
 import com.google.common.collect.Lists;
 import com.mojang.blaze3d.systems.RenderSystem;
 import cutefox.bettered_enchanting.BetteredEnchanting;
+import cutefox.bettered_enchanting.Util.BEEnchantingHelper;
 import cutefox.bettered_enchanting.Util.ModEnchantmentHelper;
 import cutefox.bettered_enchanting.screen.CustomEnchantmentScreenHandler;
 import net.fabricmc.api.EnvType;
@@ -393,7 +394,7 @@ public class CustomEnchantmentScreen extends HandledScreen<CustomEnchantmentScre
                             //If mouse over the book of enchant k and level l
                             enchantment = enchant.get().value();
                             RegistryEntry<Enchantment> enchantEntry = this.client.world.getRegistryManager().get(RegistryKeys.ENCHANTMENT).getEntry(enchant.get().value());
-                            Item enchantIngredient = ModEnchantmentHelper.getEnchantIngredient(enchantment, l);
+                            Item enchantIngredient = BEEnchantingHelper.getEnchantIngredient(this.client.world.getRegistryManager(), enchant.get().registryKey(), l);
                             int displayedEnchantLevel = l + 1;
                             int enchantLevelCost = ModEnchantmentHelper.getEnchantmentLevelCost(enchantment, displayedEnchantLevel, stack, client.world);
                             int enchantLevReq = ModEnchantmentHelper.getEnchantmentLeveRequierment(enchantment, displayedEnchantLevel);

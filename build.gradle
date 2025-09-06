@@ -47,9 +47,6 @@ repositories {
 fabricApi {
 	configureDataGeneration()
 }
-loom {
-
-}
 
 dependencies {
 	// To change the versions see the gradle.properties file

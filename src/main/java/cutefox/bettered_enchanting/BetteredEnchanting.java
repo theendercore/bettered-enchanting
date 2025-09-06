@@ -54,6 +54,7 @@ public class BetteredEnchanting implements ModInitializer {
         BEScreenHandlerType.registerModScreenHandlers();
         ModEnchantIngredientMap.createMap();
         BETradeOffers.removeEnchantedBooks();
+        BERegistryKeys.init();
 
         //Registry.register(Registries.ITEM_GROUP, Utils.id("item_group"), ITEM_GROUP);
         Registry.register(Registries.ITEM_GROUP, id("item_group"), generateItemGroup());

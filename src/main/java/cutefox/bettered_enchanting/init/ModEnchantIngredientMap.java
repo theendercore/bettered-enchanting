@@ -8,7 +8,6 @@ import com.google.gson.stream.JsonReader;
 import com.telepathicgrunt.the_bumblezone.modinit.BzEnchantments;
 import com.telepathicgrunt.the_bumblezone.modinit.BzItems;
 import cutefox.bettered_enchanting.BetteredEnchanting;
-import cutefox.bettered_enchanting.Util.Utils;
 import io.netty.buffer.ByteBuf;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.enchantment.Enchantment;
@@ -17,7 +16,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
@@ -103,7 +101,7 @@ public class ModEnchantIngredientMap {
     }
 
     public static void createMap() {
-        BetteredEnchanting.LOGGER.info("Creating enchantement ingredient map for mod : " + BetteredEnchanting.MODID);
+        BetteredEnchanting.LOGGER.info("Creating enchantement ingredients map for mod : " + BetteredEnchanting.MODID);
 
     }
 
@@ -178,39 +176,6 @@ public class ModEnchantIngredientMap {
         }
     }
 
-    /**
-     * Add the ingredients for the enchantment of the identifier in parameters
-     * If possible, prefer the {@link #addEnchantmentIngredient(Enchantment, List)} of this call.
-     *
-     * @param enchantmentId The Identifier of the enchantment
-     * @param ingredients   A list of the ingredients for the enchantment, ordered by level. (so first entry is for Enchantment I, then Enchantment II etc.)
-     * @return True if enchantment is found and successfully added to the map. False otherwise.
-     */
-    private static boolean addEnchantmentIngredient(Identifier enchantmentId, List<Item> ingredients) {
-        Registry<Enchantment> enchantRegistry = Utils.getRegistryManager().get(RegistryKeys.ENCHANTMENT);
-        Enchantment enchantment = enchantRegistry.get(enchantmentId);
-
-        return addEnchantmentIngredient(enchantment, ingredients);
-
-    }
-
-    /**
-     * Add the ingredients for the enchantment of the identifier in parameters.
-     * This is the preferred method as it's the more robust and error-free one.
-     *
-     * @param enchantment The Enchantment to be added
-     * @param ingredients A list of the ingredients for the enchantment, ordered by level. (so first entry is for Enchantment I, then Enchantment II etc.)
-     * @return True if enchantment is found and successfully added to the map. False otherwise.
-     */
-    public static boolean addEnchantmentIngredient(Enchantment enchantment, List<Item> ingredients) {
-
-        if (enchantment == null)
-            return false;
-
-        externalEnchantmentIngredientsMap.put(enchantment, ingredients);
-        return true;
-    }
-
     private static List<String> listOfIdentifiers(List<Item> items) {
 
         List<String> list = new ArrayList<>();
@@ -254,14 +219,6 @@ public class ModEnchantIngredientMap {
             byteBuf.writeBytes(bytes);
         }
     };
-
-    public static Item getIngredientOfLevel(Enchantment enchantment, int enchantmentLevel) {
-        if (ENCHANTMENT_INGREDIENTS_MAP.containsKey(enchantment))
-            if (ENCHANTMENT_INGREDIENTS_MAP.get(enchantment).size() > enchantmentLevel)
-                return ENCHANTMENT_INGREDIENTS_MAP.get(enchantment).get(enchantmentLevel);
-
-        return null;
-    }
 
     public static void loadNeoEnchantConfig() {
 
@@ -333,10 +290,6 @@ public class ModEnchantIngredientMap {
     public static void loadDiversityConfig() {
         defaultMap.put("diversity:capacity", listOfIdentifiers(List.of(Items.CHEST, Items.ENDER_CHEST, BEItems.ESSENCE_OF_CAPACITY)));
         defaultMap.put("diversity:refill", listOfIdentifiers(List.of(BEItems.ESSENCE_OF_REFILL)));
-    }
-
-    private static Map<Enchantment, List<Item>> getEnchantIngredientsMap() {
-        return ENCHANTMENT_INGREDIENTS_MAP;
     }
 
     public static List<Item> getIngredientsOfEnchantment(Enchantment enchantment) {
