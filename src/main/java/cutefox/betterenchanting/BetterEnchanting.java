@@ -4,10 +4,7 @@ import cutefox.betterenchanting.Util.EnchantingIngredientMapPayload;
 import cutefox.betterenchanting.Util.Utils;
 import cutefox.betterenchanting.conditions.ModConfigConditions;
 import cutefox.betterenchanting.config.GlobalConfig;
-import cutefox.betterenchanting.data.ModEnchantmentTags;
-import cutefox.betterenchanting.data.ModItemTags;
-import cutefox.betterenchanting.data.ModLootTables;
-import cutefox.betterenchanting.data.gen.ModEnchantIngredientMap;
+import cutefox.betterenchanting.data.gen.prov.ModEnchantIngredientMap;
 import cutefox.betterenchanting.registry.*;
 import eu.midnightdust.lib.config.MidnightConfig;
 import net.fabricmc.api.ModInitializer;
@@ -50,16 +47,16 @@ public class BetterEnchanting implements ModInitializer {
 		checkForCompat();
 
 		MidnightConfig.init("better-enchanting/betterEnchanting", GlobalConfig.class);
-		ModItems.registerModItems();
-		ModScreenHandlerType.registerModScreenHandlers();
+		BEItems.registerModItems();
+		BEScreenHandlerType.registerModScreenHandlers();
 		ModEnchantIngredientMap.createMap();
-		ModTradeOffers.removeEnchantedBooks();
+		BETradeOffers.removeEnchantedBooks();
 
 		//Registry.register(Registries.ITEM_GROUP, Utils.id("item_group"), ITEM_GROUP);
 		Registry.register(Registries.ITEM_GROUP, Utils.id("item_group"), generateItemGroup());
 		PayloadTypeRegistry.playS2C().register(EnchantingIngredientMapPayload.ID, EnchantingIngredientMapPayload.CODEC);
 
-		ModLootTableModifiers.modifyLootTables();
+		BELootTableModifiers.modifyLootTables();
 
 		addEventListner();
 
@@ -109,13 +106,13 @@ public class BetterEnchanting implements ModInitializer {
 
 		// inlined, changed lambda to method reference
         return FabricItemGroup.builder()
-				.icon(() -> new ItemStack(ModItems.ESSENCE_OF_PROTECTION))
+				.icon(() -> new ItemStack(BEItems.ESSENCE_OF_PROTECTION))
 				.displayName(Text.translatable("itemGroup.betterenchanting.item_group"))
 				.entries((context, entries) -> {
-					entries.addAll(ModItems.MOD_ITEM_LIST.stream().map(Item::getDefaultStack).toList());
+					entries.addAll(BEItems.MOD_ITEM_LIST.stream().map(Item::getDefaultStack).toList());
 
 					if(BetterEnchanting.BUMBLEZONE_PRESENT)
-						entries.addAll(ModItems.MOD_ITEM_LIST_BUMBLEZONE_COMPAT.stream().map(Item::getDefaultStack).toList());
+						entries.addAll(BEItems.MOD_ITEM_LIST_BUMBLEZONE_COMPAT.stream().map(Item::getDefaultStack).toList());
 				})
 				.build();
 	}

@@ -3,8 +3,8 @@ package cutefox.betterenchanting.screen;
 import com.mojang.datafixers.util.Pair;
 import cutefox.betterenchanting.Util.ModEnchantmentHelper;
 import cutefox.betterenchanting.config.GlobalConfig;
-import cutefox.betterenchanting.registry.ModItems;
-import cutefox.betterenchanting.registry.ModScreenHandlerType;
+import cutefox.betterenchanting.registry.BEItems;
+import cutefox.betterenchanting.registry.BEScreenHandlerType;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.EnchantingTableBlock;
@@ -56,7 +56,7 @@ public class CustomEnchantmentScreenHandler extends ScreenHandler {
     }
 
     public CustomEnchantmentScreenHandler(int syncId, PlayerInventory playerInventory, ScreenHandlerContext context) {
-        super(ModScreenHandlerType.CUSTOM_ENCHANTMENT_SCREEN_HANDLER, syncId);
+        super(BEScreenHandlerType.CUSTOM_ENCHANTMENT_SCREEN_HANDLER, syncId);
         this.inventory = new SimpleInventory(3) {
             public void markDirty() {
                 super.markDirty();
@@ -144,7 +144,7 @@ public class CustomEnchantmentScreenHandler extends ScreenHandler {
                     this.sendContentUpdates();
                 });
             } else {
-                if(!itemStack.isEmpty() && itemStack.getItem() == ModItems.MAGIC_SHARD_DULL){
+                if(!itemStack.isEmpty() && itemStack.getItem() == BEItems.MAGIC_SHARD_DULL){
                     this.enchantmentId[0] = -5;
                 }else {
                     for(int i = 0; i < ENCHANT_ARRAY_SIZE; ++i) {
@@ -242,7 +242,7 @@ public class CustomEnchantmentScreenHandler extends ScreenHandler {
                 return false;
             }else {
                 this.context.run((world, pos) -> {
-                    this.inventory.setStack(0, new ItemStack(ModItems.MAGIC_SHARD_FULL,1));
+                    this.inventory.setStack(0, new ItemStack(BEItems.MAGIC_SHARD_FULL,1));
 
                     lapisStack.decrementUnlessCreative(SHARD_FILLING_LAPIS_COST, player);
                     if(!player.isInCreativeMode())

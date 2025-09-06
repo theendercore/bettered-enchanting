@@ -1,5 +1,9 @@
 package cutefox.betterenchanting.data.gen;
 
+import cutefox.betterenchanting.data.gen.prov.ModItemTagProvider;
+import cutefox.betterenchanting.data.gen.prov.ModLootTableProvider;
+import cutefox.betterenchanting.data.gen.prov.ModModelProvider;
+import cutefox.betterenchanting.data.gen.prov.ModRecipeProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 

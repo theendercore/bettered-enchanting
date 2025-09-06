@@ -1,9 +1,6 @@
 package cutefox.betterenchanting.mixin;
 
-import com.llamalad7.mixinextras.injector.ModifyReturnValue;
-import com.terraformersmc.modmenu.util.mod.Mod;
-import cutefox.betterenchanting.config.GlobalConfig;
-import cutefox.betterenchanting.registry.ModItems;
+import cutefox.betterenchanting.registry.BEItems;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.ItemEnchantmentsComponent;
@@ -13,9 +10,7 @@ import net.minecraft.entity.ExperienceOrbEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.tag.EnchantmentTags;
 import net.minecraft.screen.GrindstoneScreenHandler;
@@ -54,13 +49,13 @@ public abstract class GrindstoneScreenHandlerMixin extends ScreenHandlerMixin{
         instance.addSlot(new Slot( input, 0, 49, 19) {
             public boolean canInsert(ItemStack stack) {
                 boolean vanillaCheck = stack.isDamageable() || EnchantmentHelper.hasEnchantments(stack);
-                return vanillaCheck || (stack.getItem().equals(ModItems.ENCHANTMENT_CATALYST) && EnchantmentHelper.hasEnchantments(stack));
+                return vanillaCheck || (stack.getItem().equals(BEItems.ENCHANTMENT_CATALYST) && EnchantmentHelper.hasEnchantments(stack));
             }
         });
         instance.addSlot(new Slot( input, 1, 49, 40) {
             public boolean canInsert(ItemStack stack) {
                 boolean vanillaCheck = stack.isDamageable() || EnchantmentHelper.hasEnchantments(stack);
-                return vanillaCheck || (stack.getItem().equals(ModItems.ENCHANTMENT_CATALYST) && !EnchantmentHelper.hasEnchantments(stack));
+                return vanillaCheck || (stack.getItem().equals(BEItems.ENCHANTMENT_CATALYST) && !EnchantmentHelper.hasEnchantments(stack));
             }
         });
         instance.addSlot(new Slot(this.result, 2, 129, 34) {
@@ -77,7 +72,7 @@ public abstract class GrindstoneScreenHandlerMixin extends ScreenHandlerMixin{
                     world.syncWorldEvent(1042, pos, 0);
                 });
                 input.setStack(0, ItemStack.EMPTY);
-                if(input.getStack(1).getItem().equals(ModItems.ENCHANTMENT_CATALYST))
+                if(input.getStack(1).getItem().equals(BEItems.ENCHANTMENT_CATALYST))
                     input.getStack(1).decrement(1);
                 else
                     input.setStack(1, ItemStack.EMPTY);
@@ -128,16 +123,16 @@ public abstract class GrindstoneScreenHandlerMixin extends ScreenHandlerMixin{
 
     @Inject(method = "getOutputStack", at = @At(value = "HEAD"), cancellable = true)
     public void betterEnchanting$createCatalyst(ItemStack firstInput, ItemStack secondInput, CallbackInfoReturnable<ItemStack> cir){
-        boolean firstItemIsCatalyst = firstInput.isEmpty()?false:firstInput.getItem().equals(ModItems.ENCHANTMENT_CATALYST);
-        boolean secondItemIsCatalyst = secondInput.isEmpty()?false:secondInput.getItem().equals(ModItems.ENCHANTMENT_CATALYST);
+        boolean firstItemIsCatalyst = firstInput.isEmpty()?false:firstInput.getItem().equals(BEItems.ENCHANTMENT_CATALYST);
+        boolean secondItemIsCatalyst = secondInput.isEmpty()?false:secondInput.getItem().equals(BEItems.ENCHANTMENT_CATALYST);
 
         if(firstItemIsCatalyst && secondInput.isEmpty())
-            cir.setReturnValue(new ItemStack(ModItems.ENCHANTMENT_CATALYST));
+            cir.setReturnValue(new ItemStack(BEItems.ENCHANTMENT_CATALYST));
 
         if(secondItemIsCatalyst && !EnchantmentHelper.hasEnchantments(secondInput)){
             if(!firstInput.isEmpty() && EnchantmentHelper.hasEnchantments(firstInput)){
 
-                ItemStack output = new ItemStack(ModItems.ENCHANTMENT_CATALYST);
+                ItemStack output = new ItemStack(BEItems.ENCHANTMENT_CATALYST);
 
                 ItemEnchantmentsComponent enchantmentsComponent = EnchantmentHelper.getEnchantments(firstInput);
 

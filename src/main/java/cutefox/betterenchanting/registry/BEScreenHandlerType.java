@@ -12,7 +12,7 @@ import net.minecraft.resource.featuretoggle.ToggleableFeature;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerType;
 
-public class ModScreenHandlerType <T extends ScreenHandler> implements ToggleableFeature {
+public class BEScreenHandlerType<T extends ScreenHandler> implements ToggleableFeature {
 
     public static final ScreenHandlerType<CustomEnchantmentScreenHandler> CUSTOM_ENCHANTMENT_SCREEN_HANDLER;
 
@@ -30,7 +30,7 @@ public class ModScreenHandlerType <T extends ScreenHandler> implements Toggleabl
         BetterEnchanting.LOGGER.info("Registering mod screen handlers for : "+ BetterEnchanting.MOD_ID);
     }
 
-    public ModScreenHandlerType(ScreenHandlerType.Factory<T> factory, FeatureSet requiredFeatures) {
+    public BEScreenHandlerType(ScreenHandlerType.Factory<T> factory, FeatureSet requiredFeatures) {
         this.factory = factory;
         this.requiredFeatures = requiredFeatures;
     }

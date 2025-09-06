@@ -1,4 +1,4 @@
-package cutefox.betterenchanting.data.gen;
+package cutefox.betterenchanting.data.gen.prov;
 
 import cutefox.betterenchanting.data.ModItemTags;
 import cutefox.betterenchanting.data.ModLootTables;

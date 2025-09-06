@@ -1,7 +1,7 @@
-package cutefox.betterenchanting.data.gen;
+package cutefox.betterenchanting.data.gen.prov;
 
 import cutefox.betterenchanting.BetterEnchanting;
-import cutefox.betterenchanting.registry.ModItems;
+import cutefox.betterenchanting.registry.BEItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
@@ -30,7 +30,7 @@ public class ModModelProvider extends FabricModelProvider {
         //endregion
 
         //region ENCHANTMENT INGREDIENTS
-        ModItems.MOD_ITEM_LIST.stream().forEach(item -> {
+        BEItems.MOD_ITEM_LIST.stream().forEach(item -> {
             itemModelGenerator.register(item, Models.GENERATED);
         });
         //endregion

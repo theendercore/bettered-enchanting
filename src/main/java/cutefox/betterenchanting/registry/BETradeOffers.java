@@ -20,7 +20,7 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class ModTradeOffers extends TradeOffers {
+public class BETradeOffers extends TradeOffers {
 
     public static final void removeEnchantedBooks(){
         //TradeOffers.PROFESSION_TO_LEVELED_TRADE.get(VillagerProfession.LIBRARIAN) .replace(1, new TheFoxDenCollection.Factory[]{new TradeOffers.BuyItemFactory(Items.PAPER, 24, 16, 2), new TradeOffers.BuyItemFactory(Items.DIAMOND, 24, 16, 2), new TradeOffers.SellItemFactory(Blocks.BOOKSHELF, 9, 1, 12, 1)});

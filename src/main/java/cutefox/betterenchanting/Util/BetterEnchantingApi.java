@@ -1,6 +1,6 @@
 package cutefox.betterenchanting.Util;
 
-import cutefox.betterenchanting.data.gen.ModEnchantIngredientMap;
+import cutefox.betterenchanting.data.gen.prov.ModEnchantIngredientMap;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registry;

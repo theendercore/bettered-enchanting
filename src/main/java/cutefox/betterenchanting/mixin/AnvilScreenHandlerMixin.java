@@ -2,7 +2,7 @@ package cutefox.betterenchanting.mixin;
 
 import cutefox.betterenchanting.Util.ModEnchantmentHelper;
 import cutefox.betterenchanting.config.GlobalConfig;
-import cutefox.betterenchanting.registry.ModItems;
+import cutefox.betterenchanting.registry.BEItems;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.fabricmc.fabric.api.item.v1.EnchantingContext;
 import net.minecraft.component.DataComponentTypes;
@@ -44,7 +44,7 @@ public abstract class AnvilScreenHandlerMixin extends ForgingScreenHandlerMixin{
             if ((firstStack.getItem() == Items.ENCHANTED_BOOK || secondStack.getItem() == Items.ENCHANTED_BOOK) && !GlobalConfig.allowBookInAnvil)
                 ci.cancel();
 
-            if(secondStack.getItem().equals(ModItems.ENCHANTMENT_CATALYST) && (firstStack.isEnchantable() && !firstStack.hasEnchantments() && !firstStack.getItem().equals(ModItems.ENCHANTMENT_CATALYST))){
+            if(secondStack.getItem().equals(BEItems.ENCHANTMENT_CATALYST) && (firstStack.isEnchantable() && !firstStack.hasEnchantments() && !firstStack.getItem().equals(BEItems.ENCHANTMENT_CATALYST))){
                 //if first item is un-enchanted and can be enchanted and second is enchantment catalyst
                 if(!secondStack.hasEnchantments()){
                     ci.cancel(); //do nothing if enchantment catalyst don't contains enchantments
@@ -62,7 +62,7 @@ public abstract class AnvilScreenHandlerMixin extends ForgingScreenHandlerMixin{
                 levelCost.set(betterEnchanting$customCost);
                 ci.cancel();
 
-            }else if(secondStack.getItem().equals(ModItems.ENCHANTMENT_CATALYST) && firstStack.getItem().equals(ModItems.ENCHANTMENT_CATALYST)){
+            }else if(secondStack.getItem().equals(BEItems.ENCHANTMENT_CATALYST) && firstStack.getItem().equals(BEItems.ENCHANTMENT_CATALYST)){
                 ItemStack outputStack = new ItemStack(firstStack.getItem());
                 outputStack.set(DataComponentTypes.MAX_STACK_SIZE,1);
 
@@ -94,14 +94,14 @@ public abstract class AnvilScreenHandlerMixin extends ForgingScreenHandlerMixin{
     @Inject(method = "onTakeOutput", at = @At("HEAD"), cancellable = true)
     public void betterEnchanting$useCatalyst(PlayerEntity player, ItemStack stack, CallbackInfo ci){
 
-        if(input.getStack(1).getItem().equals(ModItems.ENCHANTMENT_CATALYST)){
+        if(input.getStack(1).getItem().equals(BEItems.ENCHANTMENT_CATALYST)){
 
             input.setStack(0,ItemStack.EMPTY);
             if(EnchantmentHelper.hasEnchantments(stack)){//Don't destroy the catalyst if none of it's enchant where transferred to the item
                 Random rand = Random.create();
                 int breakChance = rand.nextBetween(0,100);
                 if (breakChance <= GlobalConfig.catalystGivebackChance) //10 percent chance to return an empty catalyst
-                    input.setStack(1, new ItemStack(ModItems.ENCHANTMENT_CATALYST));
+                    input.setStack(1, new ItemStack(BEItems.ENCHANTMENT_CATALYST));
                 else
                     input.getStack(1).decrement(1);
             }

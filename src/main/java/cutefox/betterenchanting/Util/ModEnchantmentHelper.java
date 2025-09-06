@@ -5,9 +5,9 @@ import com.llamalad7.mixinextras.sugar.Local;
 import com.llamalad7.mixinextras.sugar.ref.LocalRef;
 import cutefox.betterenchanting.BetterEnchanting;
 import cutefox.betterenchanting.config.GlobalConfig;
-import cutefox.betterenchanting.data.gen.ModEnchantIngredientMap;
+import cutefox.betterenchanting.data.gen.prov.ModEnchantIngredientMap;
 import cutefox.betterenchanting.data.ModEnchantmentTags;
-import cutefox.betterenchanting.registry.ModItems;
+import cutefox.betterenchanting.registry.BEItems;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.hyper_pigeon.horseshoes.Horseshoes;
 import net.minecraft.component.DataComponentTypes;
@@ -279,7 +279,7 @@ public class ModEnchantmentHelper {
     }
 
     public static ItemStack combineCatalyst(ItemStack firstCatalyst, ItemStack secondCatalyst){
-        ItemStack output = new ItemStack(ModItems.ENCHANTMENT_CATALYST);
+        ItemStack output = new ItemStack(BEItems.ENCHANTMENT_CATALYST);
         output.set(DataComponentTypes.MAX_STACK_SIZE, 1);
 
         EnchantmentHelper.getEnchantments(firstCatalyst).getEnchantmentEntries().stream().forEach(e -> output.addEnchantment(e.getKey(), e.getIntValue()));
