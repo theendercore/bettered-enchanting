@@ -1,12 +1,12 @@
 package cutefox.betterenchanting.Util;
 
+import cutefox.betterenchanting.registry.ModEnchantIngredientMap;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.network.packet.CustomPayload;
 
-import java.util.*;
-
-import cutefox.betterenchanting.registry.ModEnchantIngredientMap;
+import java.util.List;
+import java.util.Map;
 
 public record EnchantingIngredientMapPayload(Map<String, List<String>> map) implements CustomPayload {
     public static final Id<EnchantingIngredientMapPayload> ID = new Id<>(

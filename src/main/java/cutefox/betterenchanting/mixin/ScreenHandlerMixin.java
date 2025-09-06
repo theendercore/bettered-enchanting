@@ -16,7 +16,7 @@ public abstract class ScreenHandlerMixin {
     @Shadow public abstract Slot addSlot(Slot slot);
 
     @Inject(method = "canInsertIntoSlot(Lnet/minecraft/item/ItemStack;Lnet/minecraft/screen/slot/Slot;)Z", at = @At("HEAD"))
-    public void betterEnchanting$acceptCatalyst(ItemStack stack, Slot slot, CallbackInfoReturnable<Boolean> cir){
+    public void betterEnchanting$acceptCatalyst(ItemStack stack, Slot slot, CallbackInfoReturnable<Boolean> cir) {
 
     }
 

@@ -34,7 +34,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter exporter) {
-        BetterEnchanting.LOGGER.info("Generating recipes for : "+BetterEnchanting.MOD_ID);
+        BetterEnchanting.LOGGER.info("Generating recipes for : " + BetterEnchanting.MOD_ID);
 
         //region UPGRADE TEMPLATE
 
@@ -82,47 +82,47 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         //Stone to Iron
         SmithingTransformRecipeJsonBuilder.create(
-                Ingredient.ofItems(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE),
-                Ingredient.ofItems(Items.STONE_AXE),
-                Ingredient.ofItems(Items.IRON_INGOT),
-                RecipeCategory.TOOLS,
-                Items.IRON_AXE)
+                        Ingredient.ofItems(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE),
+                        Ingredient.ofItems(Items.STONE_AXE),
+                        Ingredient.ofItems(Items.IRON_INGOT),
+                        RecipeCategory.TOOLS,
+                        Items.IRON_AXE)
                 .criterion(hasItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE))
                 .offerTo(exporter, Utils.id("iron_axe_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
-                Ingredient.ofItems(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE),
-                Ingredient.ofItems(Items.STONE_PICKAXE),
-                Ingredient.ofItems(Items.IRON_INGOT),
-                RecipeCategory.TOOLS,
-                Items.IRON_PICKAXE)
+                        Ingredient.ofItems(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE),
+                        Ingredient.ofItems(Items.STONE_PICKAXE),
+                        Ingredient.ofItems(Items.IRON_INGOT),
+                        RecipeCategory.TOOLS,
+                        Items.IRON_PICKAXE)
                 .criterion(hasItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE))
                 .offerTo(exporter, Utils.id("iron_pickaxe_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
-                Ingredient.ofItems(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE),
-                Ingredient.ofItems(Items.STONE_HOE),
-                Ingredient.ofItems(Items.IRON_INGOT),
-                RecipeCategory.TOOLS,
-                Items.IRON_HOE)
+                        Ingredient.ofItems(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE),
+                        Ingredient.ofItems(Items.STONE_HOE),
+                        Ingredient.ofItems(Items.IRON_INGOT),
+                        RecipeCategory.TOOLS,
+                        Items.IRON_HOE)
                 .criterion(hasItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE))
                 .offerTo(exporter, Utils.id("iron_hoe_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
-                Ingredient.ofItems(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE),
-                Ingredient.ofItems(Items.STONE_SHOVEL),
-                Ingredient.ofItems(Items.IRON_INGOT),
-                RecipeCategory.TOOLS,
-                Items.IRON_SHOVEL)
+                        Ingredient.ofItems(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE),
+                        Ingredient.ofItems(Items.STONE_SHOVEL),
+                        Ingredient.ofItems(Items.IRON_INGOT),
+                        RecipeCategory.TOOLS,
+                        Items.IRON_SHOVEL)
                 .criterion(hasItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE))
                 .offerTo(exporter, Utils.id("iron_shovel_smithing"));
 
         SmithingTransformRecipeJsonBuilder.create(
-                Ingredient.ofItems(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE),
-                Ingredient.ofItems(Items.STONE_SWORD),
-                Ingredient.ofItems(Items.IRON_INGOT),
-                RecipeCategory.COMBAT,
-                Items.IRON_SWORD)
+                        Ingredient.ofItems(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE),
+                        Ingredient.ofItems(Items.STONE_SWORD),
+                        Ingredient.ofItems(Items.IRON_INGOT),
+                        RecipeCategory.COMBAT,
+                        Items.IRON_SWORD)
                 .criterion(hasItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(BEItems.IRON_UPGRADE_SMITHING_TEMPLATE))
                 .offerTo(exporter, Utils.id("iron_sword_smithing"));
 

@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 
 public class BETradeOffers extends TradeOffers {
 
-    public static final void removeEnchantedBooks(){
+    public static final void removeEnchantedBooks() {
         //TradeOffers.PROFESSION_TO_LEVELED_TRADE.get(VillagerProfession.LIBRARIAN) .replace(1, new TheFoxDenCollection.Factory[]{new TradeOffers.BuyItemFactory(Items.PAPER, 24, 16, 2), new TradeOffers.BuyItemFactory(Items.DIAMOND, 24, 16, 2), new TradeOffers.SellItemFactory(Blocks.BOOKSHELF, 9, 1, 12, 1)});
 
         PROFESSION_TO_LEVELED_TRADE.put(VillagerProfession.LIBRARIAN,
@@ -30,12 +30,12 @@ public class BETradeOffers extends TradeOffers {
                         1, new Factory[]{new BuyItemFactory(Items.PAPER, 24, 16, 2), new EnchantmentIngredientsFactory(2, 1), new SellItemFactory(Blocks.BOOKSHELF, 9, 1, 12, 1)},
                         2, new Factory[]{new BuyItemFactory(Items.BOOK, 4, 12, 10), new EnchantmentIngredientsFactory(5, 2), new SellItemFactory(Items.LANTERN, 1, 1, 5)},
                         3, new Factory[]{new BuyItemFactory(Items.INK_SAC, 5, 12, 20), new EnchantmentIngredientsFactory(10, 3), new SellItemFactory(Items.GLASS, 1, 4, 10)},
-	                    4, new Factory[]{new BuyItemFactory(Items.WRITABLE_BOOK, 2, 12, 30), new EnchantmentIngredientsFactory(15, 4), new SellItemFactory(Items.CLOCK, 5, 1, 15), new SellItemFactory(Items.COMPASS, 4, 1, 15)},
-                        5, new Factory[]{new SellItemFactory(Items.NAME_TAG, 20, 1, 30),new EnchantmentIngredientsFactory(25, 5),})));
+                        4, new Factory[]{new BuyItemFactory(Items.WRITABLE_BOOK, 2, 12, 30), new EnchantmentIngredientsFactory(15, 4), new SellItemFactory(Items.CLOCK, 5, 1, 15), new SellItemFactory(Items.COMPASS, 4, 1, 15)},
+                        5, new Factory[]{new SellItemFactory(Items.NAME_TAG, 20, 1, 30), new EnchantmentIngredientsFactory(25, 5),})));
 
         Map<VillagerProfession, Int2ObjectMap<Factory[]>> map = Map.of(
                 VillagerProfession.CARTOGRAPHER, REBALANCED_PROFESSION_TO_LEVELED_TRADE.get(VillagerProfession.CARTOGRAPHER),
-                VillagerProfession.ARMORER,REBALANCED_PROFESSION_TO_LEVELED_TRADE.get(VillagerProfession.ARMORER),
+                VillagerProfession.ARMORER, REBALANCED_PROFESSION_TO_LEVELED_TRADE.get(VillagerProfession.ARMORER),
                 VillagerProfession.LIBRARIAN,
                 betterEnchanting$copyToFastUtilMap(ImmutableMap.of(
                         1, new Factory[]{new BuyItemFactory(Items.PAPER, 24, 16, 2), createLibrarianTradeIngredientFactory(1), new SellItemFactory(Blocks.BOOKSHELF, 9, 1, 12, 1)},
@@ -73,32 +73,32 @@ public class BETradeOffers extends TradeOffers {
 
             int price;
 
-            if(ingredients.size() > 0 && essences.size() > 0){
-                if(tradeLevel >= 4) {
-                    if(random.nextBoolean()){
-                        itemStack = essences.get(random.nextBetween(0,essences.size()-1)).value().getDefaultStack();
+            if (ingredients.size() > 0 && essences.size() > 0) {
+                if (tradeLevel >= 4) {
+                    if (random.nextBoolean()) {
+                        itemStack = essences.get(random.nextBetween(0, essences.size() - 1)).value().getDefaultStack();
                         itemStack.setCount(1);
-                        price = random.nextBetween(25,38);
-                    }else {
-                        if(librarian.size() > 0){
-                            itemStack = librarian.get(random.nextBetween(0,librarian.size()-1)).value().getDefaultStack();
-                            itemStack.setCount(random.nextBetween(1,2));
-                            price = random.nextBetween(21,34);
-                        }else {
+                        price = random.nextBetween(25, 38);
+                    } else {
+                        if (librarian.size() > 0) {
+                            itemStack = librarian.get(random.nextBetween(0, librarian.size() - 1)).value().getDefaultStack();
+                            itemStack.setCount(random.nextBetween(1, 2));
+                            price = random.nextBetween(21, 34);
+                        } else {
                             itemStack = new ItemStack(Items.BOOK);
-                            itemStack.setCount(random.nextBetween(1,2));
-                            price = random.nextBetween(12,23);
+                            itemStack.setCount(random.nextBetween(1, 2));
+                            price = random.nextBetween(12, 23);
                         }
 
                     }
-                }else{
-                    itemStack = ingredients.get(random.nextBetween(0,ingredients.size()-1)).value().getDefaultStack();
-                    itemStack.setCount(random.nextBetween(1,3));
-                    price = random.nextBetween(12,23);
+                } else {
+                    itemStack = ingredients.get(random.nextBetween(0, ingredients.size() - 1)).value().getDefaultStack();
+                    itemStack.setCount(random.nextBetween(1, 3));
+                    price = random.nextBetween(12, 23);
                 }
-            }else {
+            } else {
                 itemStack = new ItemStack(Items.BOOK);
-                price = random.nextBetween(12,23);
+                price = random.nextBetween(12, 23);
             }
             return new TradeOffer(new TradedItem(Items.EMERALD, price), itemStack, 10, this.experience, 0.2f);
         }
@@ -125,32 +125,32 @@ public class BETradeOffers extends TradeOffers {
 
             int price;
 
-            if(ingredients.size() > 0 && essences.size() > 0){
-                if(tradeLevel >= 4) {
-                    if(random.nextBoolean()){
-                        itemStack = essences.get(random.nextBetween(0,essences.size()-1)).value().getDefaultStack();
+            if (ingredients.size() > 0 && essences.size() > 0) {
+                if (tradeLevel >= 4) {
+                    if (random.nextBoolean()) {
+                        itemStack = essences.get(random.nextBetween(0, essences.size() - 1)).value().getDefaultStack();
                         itemStack.setCount(1);
-                        price = random.nextBetween(25,38);
-                    }else {
-                        if(librarian.size() > 0){
-                            itemStack = librarian.get(random.nextBetween(0,librarian.size()-1)).value().getDefaultStack();
-                            itemStack.setCount(random.nextBetween(1,2));
-                            price = random.nextBetween(21,34);
-                        }else {
+                        price = random.nextBetween(25, 38);
+                    } else {
+                        if (librarian.size() > 0) {
+                            itemStack = librarian.get(random.nextBetween(0, librarian.size() - 1)).value().getDefaultStack();
+                            itemStack.setCount(random.nextBetween(1, 2));
+                            price = random.nextBetween(21, 34);
+                        } else {
                             itemStack = new ItemStack(Items.BOOK);
-                            itemStack.setCount(random.nextBetween(1,2));
-                            price = random.nextBetween(12,23);
+                            itemStack.setCount(random.nextBetween(1, 2));
+                            price = random.nextBetween(12, 23);
                         }
 
                     }
-                }else{
-                    itemStack = ingredients.get(random.nextBetween(0,ingredients.size()-1)).value().getDefaultStack();
-                    itemStack.setCount(random.nextBetween(1,3));
-                    price = random.nextBetween(12,23);
+                } else {
+                    itemStack = ingredients.get(random.nextBetween(0, ingredients.size() - 1)).value().getDefaultStack();
+                    itemStack.setCount(random.nextBetween(1, 3));
+                    price = random.nextBetween(12, 23);
                 }
-            }else {
+            } else {
                 itemStack = new ItemStack(Items.BOOK);
-                price = random.nextBetween(12,23);
+                price = random.nextBetween(12, 23);
             }
             return new TradeOffer(new TradedItem(Items.EMERALD, price), itemStack, 10, this.experience, 0.2f);
         }
@@ -172,7 +172,7 @@ public class BETradeOffers extends TradeOffers {
                 VillagerType.DESERT, new RebalancedEnchantmentIngredientsFactory(30, ModItemTags.LIBRARIAN_RARE_INGREDIENT),
                 VillagerType.JUNGLE, new RebalancedEnchantmentIngredientsFactory(30, ModItemTags.LIBRARIAN_RARE_INGREDIENT),
                 VillagerType.PLAINS, new RebalancedEnchantmentIngredientsFactory(30, ModItemTags.LIBRARIAN_RARE_INGREDIENT),
-                VillagerType.SAVANNA, new RebalancedEnchantmentIngredientsFactory(30,  ModItemTags.LIBRARIAN_RARE_INGREDIENT),
+                VillagerType.SAVANNA, new RebalancedEnchantmentIngredientsFactory(30, ModItemTags.LIBRARIAN_RARE_INGREDIENT),
                 VillagerType.SNOW, new RebalancedEnchantmentIngredientsFactory(30, ModItemTags.LIBRARIAN_RARE_INGREDIENT),
                 VillagerType.SWAMP, new RebalancedEnchantmentIngredientsFactory(30, ModItemTags.LIBRARIAN_RARE_INGREDIENT),
                 VillagerType.TAIGA, new RebalancedEnchantmentIngredientsFactory(30, ModItemTags.LIBRARIAN_RARE_INGREDIENT)));

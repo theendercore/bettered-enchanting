@@ -16,13 +16,13 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        BetterEnchanting.LOGGER.info("Generating block model data for : "+BetterEnchanting.MOD_ID);
+        BetterEnchanting.LOGGER.info("Generating block model data for : " + BetterEnchanting.MOD_ID);
 
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        BetterEnchanting.LOGGER.info("Generating item model data for : "+BetterEnchanting.MOD_ID);
+        BetterEnchanting.LOGGER.info("Generating item model data for : " + BetterEnchanting.MOD_ID);
 
         //region MISC
         //itemModelGenerator.register(ModItems.STEEL_BLEND, Models.GENERATED);

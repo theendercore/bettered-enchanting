@@ -33,18 +33,18 @@ public abstract class LootTableMixin {
     @Shadow protected abstract List<Integer> getFreeSlots(Inventory inventory, Random random);
 
     @Inject(method = "supplyInventory", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;isEmpty()Z"))
-    public void betterEnchanting$replaceEnchantedBook(Inventory inventory, LootContextParameterSet parameters, long seed, CallbackInfo ci, @Local LocalRef<ItemStack> localRef){
+    public void betterEnchanting$replaceEnchantedBook(Inventory inventory, LootContextParameterSet parameters, long seed, CallbackInfo ci, @Local LocalRef<ItemStack> localRef) {
 
-        if(localRef.get().isEmpty())
+        if (localRef.get().isEmpty())
             return;
 
         ItemStack localRefItemStack = localRef.get().copy();
 
-        essences.addAll(ModEnchantmentHelper.replaceEnchantedBook(localRef,localRefItemStack));
+        essences.addAll(ModEnchantmentHelper.replaceEnchantedBook(localRef, localRefItemStack));
     }
 
-    @Inject(method = "supplyInventory", at = @At(value = "TAIL"),locals = LocalCapture.CAPTURE_FAILHARD)
-    public void betterEnchanting$addEssencesAfterLootGeneration(Inventory inventory, LootContextParameterSet parameters, long seed, CallbackInfo ci){
+    @Inject(method = "supplyInventory", at = @At(value = "TAIL"), locals = LocalCapture.CAPTURE_FAILHARD)
+    public void betterEnchanting$addEssencesAfterLootGeneration(Inventory inventory, LootContextParameterSet parameters, long seed, CallbackInfo ci) {
 
         Random random = Random.create(53844);
 
@@ -52,13 +52,13 @@ public abstract class LootTableMixin {
         this.essences.clear();
     }
 
-    @Inject(method = "generateLoot(Lnet/minecraft/loot/context/LootContext;)Lit/unimi/dsi/fastutil/objects/ObjectArrayList;", at= @At(value = "RETURN"),locals = LocalCapture.CAPTURE_FAILHARD, cancellable = true)
-    public void betterEnchanting$replaceBookFromFishing(LootContext context, CallbackInfoReturnable<ObjectArrayList<ItemStack>> cir, ObjectArrayList objectArrayList){
+    @Inject(method = "generateLoot(Lnet/minecraft/loot/context/LootContext;)Lit/unimi/dsi/fastutil/objects/ObjectArrayList;", at = @At(value = "RETURN"), locals = LocalCapture.CAPTURE_FAILHARD, cancellable = true)
+    public void betterEnchanting$replaceBookFromFishing(LootContext context, CallbackInfoReturnable<ObjectArrayList<ItemStack>> cir, ObjectArrayList objectArrayList) {
 
         ObjectArrayList<ItemStack> list = objectArrayList.clone();
 
-        if(context.get(LootContextParameters.THIS_ENTITY) instanceof FishingBobberEntity ){
-            if (list.get(0).getItem().equals(Items.ENCHANTED_BOOK)){
+        if (context.get(LootContextParameters.THIS_ENTITY) instanceof FishingBobberEntity) {
+            if (list.get(0).getItem().equals(Items.ENCHANTED_BOOK)) {
                 ItemStack bookIngredient = ModEnchantmentHelper.replaceEnchantedBook(list.get(0));
                 list.clear();
                 list.add(bookIngredient);
@@ -68,17 +68,17 @@ public abstract class LootTableMixin {
 
     }
 
-    private void betterEnchanting$addEssences(Inventory inventory, Random random){
+    private void betterEnchanting$addEssences(Inventory inventory, Random random) {
 
         List<Integer> list = this.getFreeSlots(inventory, random);
 
 
-        for (ItemStack stack : essences){
+        for (ItemStack stack : essences) {
             if (list.isEmpty()) {
                 BetterEnchanting.LOGGER.warn("Tried to over-fill a container");
                 return;
             }
-            inventory.setStack(list.remove(list.size()-1), stack);
+            inventory.setStack(list.remove(list.size() - 1), stack);
         }
     }
 }

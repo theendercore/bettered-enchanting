@@ -13,8 +13,8 @@ import java.util.List;
 
 public class BEItems {
 
-    public static void registerModItems(){
-        BetterEnchanting.LOGGER.info("Registering mod iems for : "+ BetterEnchanting.MOD_ID);
+    public static void registerModItems() {
+        BetterEnchanting.LOGGER.info("Registering mod iems for : " + BetterEnchanting.MOD_ID);
     }
 
 
@@ -146,13 +146,13 @@ public class BEItems {
 
     //endregion
 
-    private static Item registerItem(String id, Item item){
+    private static Item registerItem(String id, Item item) {
         Item i = Registry.register(Registries.ITEM, Utils.id(id), item);
         MOD_ITEM_LIST.add(i);
         return i;
     }
 
-    private static Item registerItemBulblezoneCompat(String id, Item item){
+    private static Item registerItemBulblezoneCompat(String id, Item item) {
         Item i = Registry.register(Registries.ITEM, Utils.id(id), item);
         MOD_ITEM_LIST_BUMBLEZONE_COMPAT.add(i);
         return i;

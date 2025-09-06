@@ -22,6 +22,6 @@ public class ItemWithRemainderChance extends Item {
     @Override
     public ItemStack getRecipeRemainder(ItemStack stack) {
         Random random = Random.create();
-        return (this.hasRecipeRemainder() && random.nextBetween(1,100) <= remainderChance) ? this.getRecipeRemainder().getDefaultStack() : ItemStack.EMPTY;
+        return (this.hasRecipeRemainder() && random.nextBetween(1, 100) <= remainderChance) ? this.getRecipeRemainder().getDefaultStack() : ItemStack.EMPTY;
     }
 }

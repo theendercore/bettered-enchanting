@@ -18,16 +18,17 @@ public class BEScreenHandlerType<T extends ScreenHandler> implements ToggleableF
 
     private final FeatureSet requiredFeatures;
     private final ScreenHandlerType.Factory<T> factory;
+
     static {
         CUSTOM_ENCHANTMENT_SCREEN_HANDLER = register("custom_enchantment", CustomEnchantmentScreenHandler::new);
     }
 
     private static <T extends ScreenHandler> ScreenHandlerType<T> register(String id, ScreenHandlerType.Factory<T> factory) {
-        return (ScreenHandlerType)Registry.register(Registries.SCREEN_HANDLER, Utils.id(id), new ScreenHandlerType(factory, FeatureFlags.VANILLA_FEATURES));
+        return (ScreenHandlerType) Registry.register(Registries.SCREEN_HANDLER, Utils.id(id), new ScreenHandlerType(factory, FeatureFlags.VANILLA_FEATURES));
     }
 
-    public static void registerModScreenHandlers(){
-        BetterEnchanting.LOGGER.info("Registering mod screen handlers for : "+ BetterEnchanting.MOD_ID);
+    public static void registerModScreenHandlers() {
+        BetterEnchanting.LOGGER.info("Registering mod screen handlers for : " + BetterEnchanting.MOD_ID);
     }
 
     public BEScreenHandlerType(ScreenHandlerType.Factory<T> factory, FeatureSet requiredFeatures) {

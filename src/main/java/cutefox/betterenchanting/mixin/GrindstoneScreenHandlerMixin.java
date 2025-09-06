@@ -29,7 +29,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Iterator;
 
 @Mixin(GrindstoneScreenHandler.class)
-public abstract class GrindstoneScreenHandlerMixin extends ScreenHandlerMixin{
+public abstract class GrindstoneScreenHandlerMixin extends ScreenHandlerMixin {
 
     @Shadow
     private Inventory result;
@@ -38,21 +38,21 @@ public abstract class GrindstoneScreenHandlerMixin extends ScreenHandlerMixin{
 
 
     @Inject(method = "<init>(ILnet/minecraft/entity/player/PlayerInventory;Lnet/minecraft/screen/ScreenHandlerContext;)V", at = @At("TAIL"))
-    public void betterEnchanting$acceptCatalyst(int syncId, PlayerInventory playerInventory, ScreenHandlerContext context, CallbackInfo ci){
+    public void betterEnchanting$acceptCatalyst(int syncId, PlayerInventory playerInventory, ScreenHandlerContext context, CallbackInfo ci) {
 
-        GrindstoneScreenHandler instance = (GrindstoneScreenHandler)(Object)this;
+        GrindstoneScreenHandler instance = (GrindstoneScreenHandler) (Object) this;
 
         instance.slots.clear();
         instance.trackedStacks.clear();
         instance.previousTrackedStacks.clear();
 
-        instance.addSlot(new Slot( input, 0, 49, 19) {
+        instance.addSlot(new Slot(input, 0, 49, 19) {
             public boolean canInsert(ItemStack stack) {
                 boolean vanillaCheck = stack.isDamageable() || EnchantmentHelper.hasEnchantments(stack);
                 return vanillaCheck || (stack.getItem().equals(BEItems.ENCHANTMENT_CATALYST) && EnchantmentHelper.hasEnchantments(stack));
             }
         });
-        instance.addSlot(new Slot( input, 1, 49, 40) {
+        instance.addSlot(new Slot(input, 1, 49, 40) {
             public boolean canInsert(ItemStack stack) {
                 boolean vanillaCheck = stack.isDamageable() || EnchantmentHelper.hasEnchantments(stack);
                 return vanillaCheck || (stack.getItem().equals(BEItems.ENCHANTMENT_CATALYST) && !EnchantmentHelper.hasEnchantments(stack));
@@ -66,13 +66,13 @@ public abstract class GrindstoneScreenHandlerMixin extends ScreenHandlerMixin{
             public void onTakeItem(PlayerEntity player, ItemStack stack) {
                 context.run((world, pos) -> {
                     if (world instanceof ServerWorld) {
-                        ExperienceOrbEntity.spawn((ServerWorld)world, Vec3d.ofCenter(pos), this.getExperience(world));
+                        ExperienceOrbEntity.spawn((ServerWorld) world, Vec3d.ofCenter(pos), this.getExperience(world));
                     }
 
                     world.syncWorldEvent(1042, pos, 0);
                 });
                 input.setStack(0, ItemStack.EMPTY);
-                if(input.getStack(1).getItem().equals(BEItems.ENCHANTMENT_CATALYST))
+                if (input.getStack(1).getItem().equals(BEItems.ENCHANTMENT_CATALYST))
                     input.getStack(1).decrement(1);
                 else
                     input.setStack(1, ItemStack.EMPTY);
@@ -83,7 +83,7 @@ public abstract class GrindstoneScreenHandlerMixin extends ScreenHandlerMixin{
                 i += this.getExperience(input.getStack(0));
                 i += this.getExperience(input.getStack(1));
                 if (i > 0) {
-                    int j = (int)Math.ceil((double)i / 2.0);
+                    int j = (int) Math.ceil((double) i / 2.0);
                     return j + world.random.nextInt(j);
                 } else {
                     return 0;
@@ -95,12 +95,12 @@ public abstract class GrindstoneScreenHandlerMixin extends ScreenHandlerMixin{
                 ItemEnchantmentsComponent itemEnchantmentsComponent = EnchantmentHelper.getEnchantments(stack);
                 Iterator var4 = itemEnchantmentsComponent.getEnchantmentEntries().iterator();
 
-                while(var4.hasNext()) {
-                    Object2IntMap.Entry<RegistryEntry<Enchantment>> entry = (Object2IntMap.Entry)var4.next();
-                    RegistryEntry<Enchantment> registryEntry = (RegistryEntry)entry.getKey();
+                while (var4.hasNext()) {
+                    Object2IntMap.Entry<RegistryEntry<Enchantment>> entry = (Object2IntMap.Entry) var4.next();
+                    RegistryEntry<Enchantment> registryEntry = (RegistryEntry) entry.getKey();
                     int j = entry.getIntValue();
                     if (!registryEntry.isIn(EnchantmentTags.CURSE)) {
-                        i += ((Enchantment)registryEntry.value()).getMinPower(j);
+                        i += ((Enchantment) registryEntry.value()).getMinPower(j);
                     }
                 }
 
@@ -109,36 +109,36 @@ public abstract class GrindstoneScreenHandlerMixin extends ScreenHandlerMixin{
         });
 
         int i;
-        for(i = 0; i < 3; ++i) {
-            for(int j = 0; j < 9; ++j) {
+        for (i = 0; i < 3; ++i) {
+            for (int j = 0; j < 9; ++j) {
                 instance.addSlot(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
             }
         }
 
-        for(i = 0; i < 9; ++i) {
+        for (i = 0; i < 9; ++i) {
             instance.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
 
     }
 
     @Inject(method = "getOutputStack", at = @At(value = "HEAD"), cancellable = true)
-    public void betterEnchanting$createCatalyst(ItemStack firstInput, ItemStack secondInput, CallbackInfoReturnable<ItemStack> cir){
-        boolean firstItemIsCatalyst = firstInput.isEmpty()?false:firstInput.getItem().equals(BEItems.ENCHANTMENT_CATALYST);
-        boolean secondItemIsCatalyst = secondInput.isEmpty()?false:secondInput.getItem().equals(BEItems.ENCHANTMENT_CATALYST);
+    public void betterEnchanting$createCatalyst(ItemStack firstInput, ItemStack secondInput, CallbackInfoReturnable<ItemStack> cir) {
+        boolean firstItemIsCatalyst = firstInput.isEmpty() ? false : firstInput.getItem().equals(BEItems.ENCHANTMENT_CATALYST);
+        boolean secondItemIsCatalyst = secondInput.isEmpty() ? false : secondInput.getItem().equals(BEItems.ENCHANTMENT_CATALYST);
 
-        if(firstItemIsCatalyst && secondInput.isEmpty())
+        if (firstItemIsCatalyst && secondInput.isEmpty())
             cir.setReturnValue(new ItemStack(BEItems.ENCHANTMENT_CATALYST));
 
-        if(secondItemIsCatalyst && !EnchantmentHelper.hasEnchantments(secondInput)){
-            if(!firstInput.isEmpty() && EnchantmentHelper.hasEnchantments(firstInput)){
+        if (secondItemIsCatalyst && !EnchantmentHelper.hasEnchantments(secondInput)) {
+            if (!firstInput.isEmpty() && EnchantmentHelper.hasEnchantments(firstInput)) {
 
                 ItemStack output = new ItemStack(BEItems.ENCHANTMENT_CATALYST);
 
                 ItemEnchantmentsComponent enchantmentsComponent = EnchantmentHelper.getEnchantments(firstInput);
 
                 enchantmentsComponent.getEnchantmentEntries().stream().forEach(e -> output.addEnchantment(e.getKey(), e.getIntValue()));
-                output.set(DataComponentTypes.ENCHANTMENT_GLINT_OVERRIDE,true);
-                output.set(DataComponentTypes.MAX_STACK_SIZE,1);
+                output.set(DataComponentTypes.ENCHANTMENT_GLINT_OVERRIDE, true);
+                output.set(DataComponentTypes.MAX_STACK_SIZE, 1);
 
                 cir.setReturnValue(output);
             }

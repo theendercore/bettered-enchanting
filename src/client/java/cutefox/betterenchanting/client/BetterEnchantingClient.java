@@ -1,23 +1,24 @@
 package cutefox.betterenchanting.client;
 
-import java.util.*;
-
 import cutefox.betterenchanting.Util.EnchantingIngredientMapPayload;
-import cutefox.betterenchanting.registry.ModEnchantIngredientMap;
 import cutefox.betterenchanting.client.registry.BEHandledScreens;
+import cutefox.betterenchanting.registry.ModEnchantIngredientMap;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 
+import java.util.List;
+import java.util.Map;
+
 public class BetterEnchantingClient implements ClientModInitializer {
 
-	@Override
-	public void onInitializeClient() {
-		BEHandledScreens.registerModScreen();
-		ClientPlayNetworking.registerGlobalReceiver(EnchantingIngredientMapPayload.ID, (payload, context) -> {
-			context.client().execute(() -> {
-				Map<String, List<String>> decodedMap = payload.map();
-				ModEnchantIngredientMap.genMapFromJsonStringMap(context.client().world, decodedMap);
-			});
-		});
-	}
+    @Override
+    public void onInitializeClient() {
+        BEHandledScreens.registerModScreen();
+        ClientPlayNetworking.registerGlobalReceiver(EnchantingIngredientMapPayload.ID, (payload, context) -> {
+            context.client().execute(() -> {
+                Map<String, List<String>> decodedMap = payload.map();
+                ModEnchantIngredientMap.genMapFromJsonStringMap(context.client().world, decodedMap);
+            });
+        });
+    }
 }
