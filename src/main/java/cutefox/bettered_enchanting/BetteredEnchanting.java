@@ -67,12 +67,6 @@ public class BetteredEnchanting implements ModInitializer {
     }
 
     private void addEventListner() {
-        ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
-            server.execute(() -> {
-                ServerPlayNetworking.send(handler.player,
-                        new EnchantingIngredientMapPayload(ModEnchantIngredientMap.jsonMap));
-            });
-        });
         ServerLifecycleEvents.SERVER_STARTED.register(e -> {
 
             if (e.getResourceManager().getAllNamespaces().contains("enchantplus")) {

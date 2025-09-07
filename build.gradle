@@ -44,9 +44,7 @@ repositories {
 
 }
 
-fabricApi {
-	configureDataGeneration()
-}
+
 
 dependencies {
 	// To change the versions see the gradle.properties file
@@ -105,6 +103,10 @@ tasks.withType(JavaCompile).configureEach {
 loom {
 	splitEnvironmentSourceSets()
 	accessWidenerPath = file("src/main/resources/bettered_enchanting.accesswidener")
+}
+
+fabricApi {
+	configureDataGeneration()
 }
 
 java {

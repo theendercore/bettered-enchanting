@@ -12,7 +12,6 @@ public class ModConfigConditions {
     public static final ResourceConditionType<BumblezoneCompatCondition> BUMBLEZONE = createResourceConditionType("bumblezone", BumblezoneCompatCondition.CODEC);
 
     public static void registerConditions() {
-        BetteredEnchanting.LOGGER.info("Registering conditions for : " + BetteredEnchanting.MODID);
         ResourceConditions.register(NEO_ENCHANT);
         ResourceConditions.register(BUMBLEZONE);
     }
