@@ -13,6 +13,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 
 import java.util.Arrays;
+import java.util.List;
 
 
 public interface ModEnchantmentIngredients {
@@ -24,7 +25,7 @@ public interface ModEnchantmentIngredients {
         create(o, Enchantments.KNOCKBACK, Items.PISTON, BEItems.ESSENCE_OF_KNOCKBACK);
         create(o, Enchantments.MENDING, BEItems.ESSENCE_OF_MENDING);
         create(o, Enchantments.POWER,
-                Items.SNOWBALL, Items.LEATHER, Items.GHAST_TEAR, Items.SHULKER_SHELL, BEItems.ESSENCE_OF_POWER
+                Items.SNOWBALL, Items.LEATHER, Items.GHAST_TEAR, Items.CROSSBOW, BEItems.ESSENCE_OF_POWER
         );
         create(o, Enchantments.LUCK_OF_THE_SEA,
                 Items.NAUTILUS_SHELL, Items.HEART_OF_THE_SEA, BEItems.ESSENCE_OF_SEA_LUCK
@@ -58,7 +59,7 @@ public interface ModEnchantmentIngredients {
                 Items.FLINT, Items.IRON_SWORD, Items.GRINDSTONE, Items.DIAMOND, BEItems.ESSENCE_OF_SHARPNESS
         );
         create(o, Enchantments.EFFICIENCY,
-                Items.FLINT, Items.GOLDEN_APPLE, Items.OBSIDIAN, Items.CHORUS_FRUIT, BEItems.ESSENCE_OF_EFFICIENCY
+                Items.FLINT, Items.GOLDEN_APPLE, Items.OBSIDIAN, Items.CRYING_OBSIDIAN, BEItems.ESSENCE_OF_EFFICIENCY
         );
         create(o, Enchantments.BREACH, Items.IRON_INGOT, Items.SMOOTH_STONE, Items.TNT, BEItems.ESSENCE_OF_BREACH);
         create(o, Enchantments.SILK_TOUCH, BEItems.ESSENCE_OF_SILK_TOUCH);
@@ -92,6 +93,7 @@ public interface ModEnchantmentIngredients {
         create(o, Enchantments.MULTISHOT, BEItems.ESSENCE_OF_MULTISHOT);
         create(o, Enchantments.CHANNELING, BEItems.ESSENCE_OF_CHANNELING);
 
+        o.register(key(Identifier.of("farmersdelight:backstabbing")), new EnchantmentIngredient(List.of(Items.FLINT, Items.BONE, Items.SADDLE)));
     }
 
     static void create(Registerable<EnchantmentIngredient> o, RegistryKey<Enchantment> ench, Item... ing) {
